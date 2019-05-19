@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+body {
+  font-family: "YuGothic", sans-serif !important;
+  color: #2e425b;
+  background-color: ##F3F3F3;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+a {
+  color: #2e425b;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+.flex {
+  display: flex;
+}
+
+/* .header {
+  width: 100%;
+  height: 60px;
+  padding: 0 100px 0 50px;
+  line-height: 60px;
+  background-color: #716246;
+}
+
+.header > .flex {
+  justify-content: space-between;
+}
+
+.header h1 {
+  font-size: 25px;
+  letter-spacing: 4px;
+}
+
+.header .title {
+  color: #fff;
+}
+
+.login {
+  margin-right: 50px;
+  color: #fff;
+}
+.signup {
+  color: #fff;
+}
+ */
+.mv {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  background: url('/img/mv.jpg');
+  background-size: cover;
+}
+
+.mv .wrapper {
+  position: absolute;
+  top: 280px;
+  right: 130px;
+}
+
+.mv .title {
+  font-size: 60px;
+  margin-bottom: 70px;
+  letter-spacing: 3px;
+}
+
+.mv .message {
+  padding-left: 70px;
+  font-size: 30px;
+}
+
+.mv .btn {
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  margin-top: 100px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.mv .register {
+  margin-left: 30px;
+}
+
+.explain {
+  margin: 0 auto;
+  padding: 80px 0 80px;
+  width: 1180px;
+  text-align: center;
+}
+
+.explain .question {
+  font-size: 40px;
+}
+
+.explain .answer {
+  margin-top: 80px;
+  font-size: 25px;
+  line-height: 2.5;
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  background-color: #3E3E3E;
+}
