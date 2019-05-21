@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<title>ユーザー登録フォーム</title>
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/styles.css">
-</head>
+@component('components.head')
+  @slot('title')
+  新規登録
+  @endslot
+@endcomponent
 <body>
-  <header class="header">
+  @component('components.header')
+  @endcomponent
+  <!-- <header class="header">
     <div class="flex">
       <div class="left">
         <h1><a class="title" href="/">Book Talk</a></h1>
@@ -17,8 +16,8 @@
         <a class="signup" href="#">新規登録</a>
       </div>
     </div>
-  </header>
-  <section class="register">
+  </header> -->
+  <div class="register">
     <div class="container">
       <h2>新規登録</h2>
       <form name="registform" action="/auth/register"method="post">
@@ -42,6 +41,8 @@
         <button class="form_btn type="submit" name="action" value="send">送信</button>
       </form>
     </div>
-  </section>
+  </div>
+  @component('components.footer')
+  @endcomponent
 </body>
 </html>

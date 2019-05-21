@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<title>ログイン</title>
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/styles.css">
-</head>
+@component('components.head')
+  @slot('title')
+  ログイン
+  @endslot
+@endcomponent
 <body>
-  <header class="header">
-    <div class="flex">
-      <div class="left">
-        <h1><a class="title" href="/">Book Talk</a></h1>
-      </div>
-      <div class="right flex">
-        <a class="login" href="#">ログイン</a>
-        <a class="signup" href="#">新規登録</a>
-      </div>
-    </div>
-  </header>
-  <section class="login">
+  @component('components.header')
+  @endcomponent
+  <div class="login">
     <div class="container">
       <h2>ログイン</h2>
       @isset($message)
@@ -32,11 +20,13 @@
         </div>
         <div class="wrapper">
           <input class="form_text" type="password" name="password" size="30" placeholder="パスワード">
-          <span class="error">{{ $errors->first('password')}}</span>        
+          <span class="error">{{ $errors->first('password')}}</span>
         </div>
         <button class="form_btn" type="submit" name="action" value="send">ログイン</button>
       </form>
     </div>
-  </section>
+  </div>
+  @component('components.footer')
+  @endcomponent
 </body>
 </html>

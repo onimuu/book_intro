@@ -14,11 +14,6 @@
 // トップページ表示
 Route::get('/', 'TopPageController@top');
 
-// ホーム画面表示
-Route::get('/home', function() {
-  return view('home');
-});
-
 // 会員登録
 Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('auth/register', 'Auth\RegisterController@register');
@@ -29,3 +24,13 @@ Route::post('auth/login', 'Auth\LoginController@login');
 
 // ログアウト
 Route::get('auth/logout', 'Auth\LoginController@logout');
+
+// 投稿一覧
+Route::get('/home', 'PostsController@index');
+
+// 記事詳細
+Route::get('/posts/{id}', 'PostsController@show');
+
+// 新規作成
+Route::get('/posts/add', 'PostsController@add');
+Route::post('/posts/add', 'PostsController@create');
