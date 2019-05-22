@@ -27,10 +27,15 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 
 // 投稿一覧
 Route::get('/home', 'PostsController@index');
+  // -<middleware('auth');
 
 // 記事詳細
-Route::get('/posts/{id}', 'PostsController@show');
+Route::get('/posts/{id}', 'PostsController@show')->where('id', '[0-9]+');
 
 // 新規作成
 Route::get('/posts/add', 'PostsController@add');
 Route::post('/posts/add', 'PostsController@create');
+
+// マイページ
+// Route::get('/user/{id}', 'UserController@show')->where('id', '[0-9]+');
+Route::get('/user', 'UserController@show');

@@ -4,24 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
   public function index()
   {
+    $user = Auth::user();
     $items = Post::all();
-    return view('posts.home', ['items' => $items]);
+    return view('posts.home', ['items' => $items, 'user' => $user]);
   }
 
   public function add()
   {
-    return view('posts.add');
+    $user = Auth::user();
+    return view('posts.add', ['user' => $user]);
   }
 
   public function create(Request $request)
   {
     // $this->validate($request, Person::$rules);
     $post = new Post;
+    $post->user_id = $request->user_id;
     $post->book = $request->book;
     $post->title = $request->title;
     $post->body = $request->body;

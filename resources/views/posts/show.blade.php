@@ -18,6 +18,16 @@
       </div>
     </header>
     <h2 class="heading">投稿詳細</h2>
+    <div class="container">
+      <table class="table">
+        <tr><th>本名</th><td>{{$post->book}}</td></tr>
+        <tr><th>投稿名</th><td>{{$post->title}}</td></tr>
+      </table>
+      <div class="body">
+        {{$post->body}}
+      </div>
+      <a class="go_home" href="/home">ホームへ戻る</a>
+    </div>
 
 </body>
 </html>
