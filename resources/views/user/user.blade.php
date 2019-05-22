@@ -14,6 +14,7 @@
         <div class="right flex">
           <div><a class="login" href="/posts/add">投稿</a></div>
           <div><a class="signup" href="/user">{{$user->name}}</a></div>
+          <div><a class="logout" href="/auth/logout">ログアウト</a></div>
         </div>
       </div>
     </header>

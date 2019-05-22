@@ -1,11 +1,11 @@
 @component('components.head')
   @slot('title')
-  新規作成
+  投稿編集
   @endslot
 @endcomponent
 
 <body>
-  <div class="add">
+  <div class="edit">
     <header class="header">
       <div class="flex">
         <div class="left">
@@ -17,27 +17,28 @@
         </div>
       </div>
     </header>
-    <h2 class="heading">新規作成</h2>
+    <h2 class="heading">投稿編集</h2>
     <div class="container">
-      <form action="/posts/add" method="post">
+      <form action="/posts/edit" method="post">
         {{ csrf_field() }}
+        <input type="hidden" name="id" value="{{$post->id}}">
         <input type="hidden" name="user_id" value="{{$user->id}}">
         <div class="box">
           <label for="book">紹介する本</label>
-          <input class="form_text" type="text" name="book" value="{{old('book')}}">
+          <input class="form_text" type="text" name="book" value="{{$post->book}}">
           <span class="error">{{$errors->first('book')}}</span>
         </div>
         <div class="box">
           <label for="book">この投稿のタイトル</label>
-          <input class="form_text" type="text" name="title" value="{{old('title')}}">
           <span class="error">{{$errors->first('title')}}</span>
+          <input class="form_text" type="text" name="title" value="{{$post->title}}">
         </div>
         <div class="box">
           <label for="book">本文(400字以内)</label>
-          <textarea class="textarea-text" name="body">{{old('body')}}</textarea>
-          <span class="error">{{$errors->first('body')}}</span>
+          <textarea class="textarea-text" name="body">{{$post->body}}</textarea>
+          <span class="error">{{$errors->first('body')}}</span>          
         </div>
-        <button class="form_btn" type="submit" name="action" value="send">投稿</button>
+        <button class="form_btn" type="submit" name="action" value="send">更新する</button>
       </form>
       <a class="go_home" href="/home">ホームへ戻る</a>
     </div>

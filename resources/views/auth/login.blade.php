@@ -14,11 +14,11 @@
       @endisset
       <form name="loginform" action="/auth/login" method="post">
         {{ csrf_field() }}
-        <div class="wrapper">
+        <div class="box">
           <input class="form_text" type="text" name="email" size="30" placeholder="メールアドレス" value="{{ old('email') }}">
           <span class="error">{{ $errors->first('email')}}</span>
         </div>
-        <div class="wrapper">
+        <div class="box">
           <input class="form_text" type="password" name="password" size="30" placeholder="パスワード">
           <span class="error">{{ $errors->first('password')}}</span>
         </div>

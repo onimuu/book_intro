@@ -29,13 +29,23 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 Route::get('/home', 'PostsController@index');
   // -<middleware('auth');
 
-// 記事詳細
+// 投稿詳細
 Route::get('/posts/{id}', 'PostsController@show')->where('id', '[0-9]+');
 
 // 新規作成
 Route::get('/posts/add', 'PostsController@add');
 Route::post('/posts/add', 'PostsController@create');
 
+// 投稿編集
+Route::get('/posts/{id}/edit', 'PostsController@edit')->where('id', '[0-9]+');
+Route::post('/posts/edit', 'PostsController@update');
+
+// 投稿削除
+Route::get('/posts/{id}/del', 'PostsController@delete')->where('id', '[0-9]+');
+
 // マイページ
-// Route::get('/user/{id}', 'UserController@show')->where('id', '[0-9]+');
 Route::get('/user', 'UserController@show');
+
+// 登録情報変更
+Route::get('/user/edit', 'UserController@edit');
+Route::post('/user/edit', 'UserController@update');

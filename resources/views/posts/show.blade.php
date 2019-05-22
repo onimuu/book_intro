@@ -13,7 +13,7 @@
         </div>
         <div class="right flex">
           <a class="login" href="/posts/add">投稿</a>
-          <a class="signup" href="#">マイページ</a>
+          <a class="signup" href="/user">{{$user->name}}</a>
         </div>
       </div>
     </header>
@@ -26,6 +26,10 @@
       <div class="body">
         {{$post->body}}
       </div>
+      @if ($user->id === $post->user_id)
+      <a class="modify" href="/posts/{{$post->id}}/edit">編集する</a>
+      <a class="delete" href="/posts/{{$post->id}}/del">削除する</a>
+      @endif
       <a class="go_home" href="/home">ホームへ戻る</a>
     </div>
 
