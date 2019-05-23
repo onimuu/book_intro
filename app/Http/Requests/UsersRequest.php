@@ -26,6 +26,7 @@ class UsersRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'email',
+            'photo' => 'file|image|mimes:jpeg,png,jpg|max:2048'
         ];
     }
 
@@ -34,6 +35,10 @@ class UsersRequest extends FormRequest
       return [
         'name.required' => '必須項目です。',
         'email.email' => 'メールアドレスが必要です。',
+        'photo.file' => 'ファイル形式が必要です。',
+        'photo.image' => '画像ファイルが必要です。',
+        'photo.mimes' => '拡張子がjpeg,png,jpgである必要があります。',
+        'photo.max' => 'ファイルの容量オーバーです。',
       ];
     }
 }

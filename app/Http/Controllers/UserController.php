@@ -30,7 +30,12 @@ class UserController extends Controller
     $user = Auth::user();
     $user->name = $request->name;
     $user->email = $request->email;
+    if ($request->photo) {
+      $filename = $request->file('photo')->store('public/avatar');
+      $user->avatar_filename = basename($filename);
+    }
     $user->save();
+
     return redirect('/user');
   }
 }

@@ -21,7 +21,11 @@
     <h2 class="heading">ユーザー</h2>
     <div class="container">
       <div class="profile">
-        <div class="user_img"></div>
+        @if ($user->avatar_filename)
+          <img class="thumbnail" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}">
+        @else
+          <div class="dummy"></div>
+        @endif
         <div class="user_name">{{$user->name}}</div>
         <a class="modify" href="/user/edit">プロフィールを変更する</a>
       </div>

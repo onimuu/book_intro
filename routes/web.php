@@ -49,3 +49,6 @@ Route::get('/user', 'UserController@show');
 // 登録情報変更
 Route::get('/user/edit', 'UserController@edit');
 Route::post('/user/edit', 'UserController@update');
+
+// プロフィール画像アップロード
+// Route::post('/upload', 'UserController@upload');

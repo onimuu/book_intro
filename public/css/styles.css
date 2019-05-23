@@ -344,11 +344,11 @@ a:hover {
   text-align: center;
 }
 
-.user_img {
+.user .thumbnail, .user .dummy {
   width: 150px;
   height: 150px;
   margin: 0 auto 20px;
-  background-color: black;
+  background-color: #a9a9a9;
   border-radius: 50%;
 }
 
@@ -377,18 +377,58 @@ a:hover {
 .user_edit .container {
   margin: 100px auto;
   padding: 30px;
-  width: 500px;
+  width: 400px;
   border: 1px solid #a9a9a9;
 }
 
-.user_edit .form_text {
-  margin: 10px 0 30px;
+.user_edit .box {
+  margin-bottom: 35px;
 }
+
+.user_edit .box.first {
+  text-align: center;
+}
+
+.user_edit .error {
+  bottom: -25px;
+  width: 100%;
+}
+.user_edit .box .error.first {
+  display: block;
+}
+
+.user_edit .label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.user_edit .thumbnail {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.user_edit .dummy {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #a9a9a9;
+}
+
+.user_edit .form_file {
+  display: block;
+  margin-top: 10px;
+  padding-left: 127px;
+}
+
 
 .user_edit .form_btn {
   display: block;
   margin-left: auto;
 }
+
 
 
 /* フォーム初期化＋改変 */

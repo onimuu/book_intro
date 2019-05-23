@@ -20,15 +20,27 @@
     </header>
     <h2 class="heading">登録情報変更</h2>
     <div class="container">
-      <form action="/user/edit" method="post">
+      <form action="/user/edit" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
+        <div class="box first">
+          <label class="label">プロフィール画像</label>
+          @if ($user->avatar_filename)
+            <img class="thumbnail" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}">
+          @else
+            <span class="dummy"></span>
+          @endif
+          <input class="form_file" type="file" name="photo">
+          @if ($errors->any())
+            <span class="error first">{{ $errors->first('photo') }}</span>
+          @endif
+        </div>
         <div class="box">
-          <label for="name">ユーザー名</label>
+          <label class="label" for="name">ユーザー名</label>
           <input class="form_text" type="text" name="name" size="30" value="{{$user->name}}">
           <span class="error">{{ $errors->first('name') }}</span>
         </div>
         <div class="box">
-          <label for="email">メールアドレス</label>
+          <label class="label" for="email">メールアドレス</label>
           <input class="form_text" type="text" name="email" size="30" value="{{$user->email}}">
           <span class="error">{{ $errors->first('email')}}</span>
         </div>
