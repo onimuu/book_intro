@@ -26,29 +26,36 @@ Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
 
 // 投稿一覧
-Route::get('/home', 'PostsController@index');
-  // -<middleware('auth');
+Route::get('/home', 'PostsController@index')
+->middleware('auth');
 
 // 投稿詳細
-Route::get('/posts/{id}', 'PostsController@show')->where('id', '[0-9]+');
+Route::get('/posts/{id}', 'PostsController@show')->where('id', '[0-9]+')
+->middleware('auth');
+
 
 // 新規作成
-Route::get('/posts/add', 'PostsController@add');
+Route::get('/posts/add', 'PostsController@add')
+->middleware('auth');
 Route::post('/posts/add', 'PostsController@create');
 
 // 投稿編集
-Route::get('/posts/{id}/edit', 'PostsController@edit')->where('id', '[0-9]+');
+Route::get('/posts/{id}/edit', 'PostsController@edit')->where('id', '[0-9]+')
+->middleware('auth');
 Route::post('/posts/edit', 'PostsController@update');
 
 // 投稿削除
-Route::get('/posts/{id}/del', 'PostsController@delete')->where('id', '[0-9]+');
+Route::get('/posts/{id}/del', 'PostsController@delete')->where('id', '[0-9]+')
+->middleware('auth');
 
 // マイページ
-Route::get('/user', 'UserController@show');
+Route::get('/user', 'UserController@show')
+->middleware('auth');
 
 // 登録情報変更
-Route::get('/user/edit', 'UserController@edit');
+Route::get('/user/edit', 'UserController@edit')
+->middleware('auth');
 Route::post('/user/edit', 'UserController@update');
 
-// プロフィール画像アップロード
-// Route::post('/upload', 'UserController@upload');
+
+Auth::routes();
