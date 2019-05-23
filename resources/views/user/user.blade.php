@@ -23,7 +23,7 @@
       <div class="profile">
         <div class="user_img"></div>
         <div class="user_name">{{$user->name}}</div>
-        <a class="modify" href="#">プロフィールを変更する</a>
+        <a class="modify" href="/user/edit">プロフィールを変更する</a>
       </div>
       <div class="my_posts">
         @foreach ($items as $item)

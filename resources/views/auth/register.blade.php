@@ -23,7 +23,7 @@
       <form name="registform" action="/auth/register"method="post">
         {{ csrf_field() }}
         <div class="box">
-          <input class="form_text" type="text" name="name"size="30" placeholder="名前" value="{{old('name')}}">
+          <input class="form_text" type="text" name="name"size="30" placeholder="ユーザー名" value="{{old('name')}}">
           <span class="error">{{ $errors->first('name') }}</span>
         </div>
         <div class="box">

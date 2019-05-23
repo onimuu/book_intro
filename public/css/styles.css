@@ -373,6 +373,24 @@ a:hover {
   flex-wrap: wrap;
 }
 
+/* 登録情報変更 */
+.user_edit .container {
+  margin: 100px auto;
+  padding: 30px;
+  width: 500px;
+  border: 1px solid #a9a9a9;
+}
+
+.user_edit .form_text {
+  margin: 10px 0 30px;
+}
+
+.user_edit .form_btn {
+  display: block;
+  margin-left: auto;
+}
+
+
 /* フォーム初期化＋改変 */
 .form_text {
   -moz-appearance: none;

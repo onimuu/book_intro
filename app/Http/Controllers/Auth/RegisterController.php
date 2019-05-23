@@ -52,6 +52,20 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],
+        [
+          'name.required' => '必須項目です。',
+          'name.string' => '文字の入力が必要です。',
+          'name.max' => '字数は255字以内です。',
+          'email.required' => '必須項目です。',
+          'email.string' => '文字の入力が必要です。',
+          'email.email' => 'メールアドレスが必要です。',
+          'email.max' => '字数は255字以内です。',
+          'email.unique:users' => 'このメールアドレスは登録済みです。',
+          'password.required' => '必須項目です。',
+          'password.string' => '文字の入力が必要です。',
+          'password.min' => '8字以上必要です。',
+          'password.confirmed' => 'パスワードが一致していません。',
         ]);
     }
 
