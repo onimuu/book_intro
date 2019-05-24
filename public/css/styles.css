@@ -80,6 +80,17 @@ a:hover {
   text-align: center;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.page-item:first-child {
+  margin-right: 10px;
+}
+
+
 .footer {
   padding: 20px 0;
   text-align: center;
@@ -255,10 +266,13 @@ a:hover {
 
 /* ホーム */
 .home .container {
-  display: flex;
-  flex-wrap: wrap;
   margin: 100px auto;
   width: 850px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .item {
@@ -366,11 +380,6 @@ a:hover {
   line-height: 30px;
   border-radius: 5px;
   background-color: #d3d3d3;
-}
-
-.user .my_posts {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 /* 登録情報変更 */

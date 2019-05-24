@@ -23,12 +23,15 @@
     </header>
     <h2 class="heading">投稿一覧</h2>
     <div class="container">
-      @foreach ($items as $item)
+      <div class="items">
+        @foreach ($items as $item)
         <a class="item" href="/posts/{{$item->id}}">
           <p class="book">{{"『" . $item->book . "』" }}</p>
           <p class="title">{{$item->title}}</p>
         </a>
-      @endforeach
+        @endforeach
+      </div>
+      {{ $items->links() }}
     </div>
   </div>
 

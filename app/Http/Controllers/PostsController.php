@@ -12,7 +12,7 @@ class PostsController extends Controller
   public function index()
   {
     $user = Auth::user();
-    $items = Post::all();
+    $items = Post::simplePaginate(6);
     return view('posts.home', ['items' => $items, 'user' => $user]);
   }
 

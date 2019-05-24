@@ -30,12 +30,15 @@
         <a class="modify" href="/user/edit">プロフィールを変更する</a>
       </div>
       <div class="my_posts">
-        @foreach ($items as $item)
+        <div class="items">
+          @foreach ($items as $item)
           <a class="item" href="/posts/{{$item->id}}">
             <p class="book">{{"『" . $item->book . "』" }}</p>
             <p class="title">{{$item->title}}</p>
           </a>
-        @endforeach
+          @endforeach
+        </div>
+        {{ $items->links() }}
       </div>
     </div>
   </div>
