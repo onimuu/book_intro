@@ -324,9 +324,24 @@ a:hover {
 
 
 /* ホーム */
+.home .form_select {
+  width: 130px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.home .form_btn_2 {
+  height: 30px;
+}
+
 .home .container {
-  margin: 100px auto;
+  margin: 50px auto 100px;
   width: 850px;
+}
+
+.home .genre {
+  margin-bottom: 30px;
+  text-align: right;
 }
 
 .items {
@@ -350,8 +365,21 @@ a:hover {
   margin-right: 0;
 }
 
+.item .title {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  line-height: 1.3;
+}
+
 .item .book {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+}
+
+.item .author {
+  margin-bottom: 0px;
 }
 
 /* 投稿詳細 */

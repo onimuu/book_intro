@@ -1,6 +1,6 @@
 @component('components.head')
   @slot('title')
-  投稿一覧
+  ジャンル別表示
   @endslot
 @endcomponent
 <body>
@@ -21,7 +21,7 @@
         </div>
       </div>
     </header>
-    <h2 class="heading">投稿一覧</h2>
+    <h2 class="heading">ジャンル別表示</h2>
     <div class="container">
       <div class="genre">
         <form action="/home/genre" method="post">
@@ -46,9 +46,9 @@
         <a class="item" href="/posts/{{$item->id}}">
           <div class="decoration {{$item->genre}}"></div>
           <div class="decoration_inner"></div>
-          <p class="title">{{ "「" .  $item->title . "」" }}</p>
-          <p class="book">{{ "『" . $item->book . "』" }}</p>
           <p class="author">{{ $item->author }} 著</p>
+          <p class="book">{{"『" . $item->book . "』" }}</p>
+          <p class="title">{{$item->title}}</p>
         </a>
         @endforeach
       </div>

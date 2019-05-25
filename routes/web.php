@@ -52,10 +52,14 @@ Route::get('/posts/{id}/del', 'PostsController@delete')->where('id', '[0-9]+')
 Route::get('/user', 'UserController@show')
 ->middleware('auth');
 
+// ジャンル別表示
+Route::post('/home/genre', 'PostsController@genre');
+
 // 登録情報変更
 Route::get('/user/edit', 'UserController@edit')
 ->middleware('auth');
 Route::post('/user/edit', 'UserController@update');
+
 
 
 Auth::routes();

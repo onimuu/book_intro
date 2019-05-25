@@ -68,5 +68,11 @@ class PostsController extends Controller
     return redirect('/home');
   }
 
+  public function genre(Request $request)
+  {
+    $user = Auth::user();
+    $items = Post::where('genre', $request->genre)->simplePaginate(6);
+    return  view('posts.genre', ['items' => $items, 'user' => $user]);
+  }
 
 }
