@@ -18,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->integer('user_id');
             $table->string('book');
             $table->string('title');
+            $table->string('author');
+            $table->string('genre');
             $table->text('body');
             $table->timestamps();
         });
