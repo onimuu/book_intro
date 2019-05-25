@@ -110,6 +110,57 @@ a:hover {
   font-size: 14px;
 }
 
+.decoration {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 0;
+  height: 0;
+  border-width: 40px;
+  border-style: solid;
+  border-color: #F3F3F3 #fff #F3F3F3 #F3F3F3;
+  transform: rotate(45deg);
+  z-index: -100;
+}
+
+.decoration_inner {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 0;
+  height: 0;
+  border-width: 25px;
+  border-style: solid;
+  border-color: #F3F3F3;
+  transform: rotate(45deg);
+  z-index: -100;
+}
+
+.literature {
+  border-color: #F3F3F3 #a0522d #F3F3F3 #F3F3F3;
+}
+.philosophy {
+  border-color: #F3F3F3 #ffa500 #F3F3F3 #F3F3F3;
+}
+.art {
+  border-color: #F3F3F3 #ffff00 #F3F3F3 #F3F3F3;
+}
+.religion {
+  border-color: #F3F3F3 #a0522d #F3F3F3 #F3F3F3;
+}
+.study {
+  border-color: #F3F3F3 #87cefa #F3F3F3 #F3F3F3;
+}
+.technology {
+  border-color: #F3F3F3 #0000ff #F3F3F3 #F3F3F3;
+}
+.business {
+  border-color: #F3F3F3 #800080 #F3F3F3 #F3F3F3;
+}
+.others {
+  border-color: #F3F3F3 #000 #F3F3F3 #F3F3F3;
+}
+
 
  /* トップページ */
 .mv {
@@ -207,6 +258,10 @@ a:hover {
   margin: 10px 0 30px;
 }
 
+.add .form_select {
+  margin: 10px 0 30px;
+}
+
 .add .textarea-text {
   margin: 10px 0 30px;
   padding: 20px;
@@ -237,6 +292,10 @@ a:hover {
 }
 
 .edit .form_text {
+  margin: 10px 0 30px;
+}
+
+.edit .form_select {
   margin: 10px 0 30px;
 }
 
@@ -276,6 +335,7 @@ a:hover {
 }
 
 .item {
+  position: relative;
   display: block;
   width: calc(33.3% - 34px);
   height: 300px;
@@ -500,4 +560,26 @@ a:hover {
 .form_btn::-moz-foucus-inner {
   border: none;
   padding: 0;
+}
+.form_select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent url(https://haniwaman.com/wp-content/uploads/2018/12/form-css-arrow.png) no-repeat center right 8px/16px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0.4em 0.8em;
+  width: 100%;
+}
+.form_select::-ms-expand {
+  display: none;
+}
+.form_select:focus {
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  box-shadow: none;
+  outline: none;
 }

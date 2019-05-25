@@ -26,6 +26,8 @@
       <div class="items">
         @foreach ($items as $item)
         <a class="item" href="/posts/{{$item->id}}">
+          <div class="decoration {{$item->genre}}"></div>
+          <div class="decoration_inner"></div>
           <p class="book">{{"『" . $item->book . "』" }}</p>
           <p class="title">{{$item->title}}</p>
         </a>

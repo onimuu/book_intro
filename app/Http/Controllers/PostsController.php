@@ -26,8 +26,10 @@ class PostsController extends Controller
   {
     $post = new Post;
     $post->user_id = $request->user_id;
-    $post->book = $request->book;
     $post->title = $request->title;
+    $post->book = $request->book;
+    $post->author = $request->author;
+    $post->genre = $request->genre;
     $post->body = $request->body;
     $post->save();
     return redirect('/home');
@@ -51,8 +53,10 @@ class PostsController extends Controller
   {
     $post = Post::find($request->id);
     $post->user_id = $request->user_id;
-    $post->book = $request->book;
     $post->title = $request->title;
+    $post->book = $request->book;
+    $post->author = $request->author;
+    $post->genre = $request->genre;
     $post->body = $request->body;
     $post->save();
     return redirect('/home');
