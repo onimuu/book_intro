@@ -13,6 +13,7 @@ class PostsTableSeeder extends Seeder
     {
         $param = [
           'user_id' => '1',
+          'user_name' => 'onimu',
           'book' => '西洋哲学史',
           'title' => '哲学入門にうってつけ',
           'body' => 'わかりやすい名著。わかりやすい名著。わかりやすい名著。わかりやすい名著。わかりやすい名著。わかりやすい名著。わかりやすい名著。わかりやすい名著。わかりやすい名著。わかりやすい名著。',
@@ -23,6 +24,7 @@ class PostsTableSeeder extends Seeder
 
         $param = [
           'user_id' => '1',
+          'user_name' => 'onimu',
           'book' => '東洋的な見方',
           'title' => '現代日本にはないもう一つの世界の見方',
           'body' => '素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。素晴らしい。',
@@ -33,6 +35,7 @@ class PostsTableSeeder extends Seeder
 
         $param = [
           'user_id' => '1',
+          'user_name' => 'onimu',
           'book' => '統計学は最強の学問である',
           'title' => '統計学の面白さ',
           'body' => '前半は統計学有用さを興味深いエピソードで紹介する。後半は教科書とは違う見方で色々な概念を説明しており、多面的な理解に大いに役立つ。',
@@ -43,6 +46,7 @@ class PostsTableSeeder extends Seeder
 
         $param = [
           'user_id' => '2',
+          'user_name' => 'wanko',
           'book' => '日日是好日',
           'title' => '茶道を始めたくなる本',
           'body' => '茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。茶道と人生の接点。',

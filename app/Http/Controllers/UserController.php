@@ -15,7 +15,6 @@ class UserController extends Controller
   {
     $user = Auth::user();
     $items = Post::where('user_id', $user->id)->simplePaginate(6);
-    // $items = Post::where('user_id', $user->id)->get();
     return view('user/user', ['user' => $user, 'items' => $items]);
   }
 

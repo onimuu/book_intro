@@ -72,7 +72,85 @@ class PostsController extends Controller
   {
     $user = Auth::user();
     $items = Post::where('genre', $request->genre)->simplePaginate(6);
-    return  view('posts.genre', ['items' => $items, 'user' => $user]);
+    $item_genre = $request->genre;
+    return view('posts.genre', ['items' => $items, 'user' => $user, 'item_genre' => $item_genre]);
+  }
+
+  public function favorite($id)
+  {
+    $item = Post::find($id);
+    if ($item->favorite_user_identify === 0) {
+      // 星追加
+      $item->favorite += 1;
+      $item->favorite_user_identify = 1;
+    } else {
+      // 星取り消し
+      $item->favorite -= 1;
+      $item->favorite_user_identify = 0;
+    }
+    $item->save();
+
+    $user = Auth::user();
+    $items = Post::simplePaginate(6);
+    return view('posts.home', ['items' => $items, 'user' => $user]);
+  }
+
+  public function genre_favorite($id, $genre)
+  {
+    $item = Post::find($id);
+    if ($item->favorite_user_identify === 0) {
+      // 星追加
+      $item->favorite += 1;
+      $item->favorite_user_identify = 1;
+    } else {
+      // 星取り消し
+      $item->favorite -= 1;
+      $item->favorite_user_identify = 0;
+    }
+    $item->save();
+
+    $user = Auth::user();
+    $items = Post::where('genre', $genre)->simplePaginate(6);
+    $item_genre = $genre;
+    return view('posts.genre', ['items' => $items, 'user' => $user, 'item_genre' => $item_genre]);
+  }
+
+  public function user_favorite($id)
+  {
+    $item = Post::find($id);
+    if ($item->favorite_user_identify === 0) {
+      // 星追加
+      $item->favorite += 1;
+      $item->favorite_user_identify = 1;
+    } else {
+      // 星取り消し
+      $item->favorite -= 1;
+      $item->favorite_user_identify = 0;
+    }
+    $item->save();
+
+    $user = Auth::user();
+    $items = Post::where('user_id', $user->id)->simplePaginate(6);
+    return view('user/user', ['user' => $user, 'items' => $items]);
+  }
+
+  public function show_favorite($id)
+  {
+    $item = Post::find($id);
+    if ($item->favorite_user_identify === 0) {
+      // 星追加
+      $item->favorite += 1;
+      $item->favorite_user_identify = 1;
+    } else {
+      // 星取り消し
+      $item->favorite -= 1;
+      $item->favorite_user_identify = 0;
+    }
+    $item->save();
+
+    $user = Auth::user();
+    $post = Post::find($id);
+    return view('posts.show', ['post' => $post, 'user' => $user]);
   }
 
 }

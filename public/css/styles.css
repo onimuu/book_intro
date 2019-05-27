@@ -118,7 +118,7 @@ a:hover {
   height: 0;
   border-width: 40px;
   border-style: solid;
-  border-color: #F3F3F3 #fff #F3F3F3 #F3F3F3;
+  border-color: #F3F3F3 #ffffff #F3F3F3 #F3F3F3;
   transform: rotate(45deg);
   z-index: -100;
 }
@@ -308,6 +308,9 @@ a:hover {
 .edit .form_btn {
   display: block;
   margin-left: auto;
+  padding: 10px;
+  width: 96px;
+  height: 45px;
   background-color: #87cefa;
 }
 
@@ -325,13 +328,15 @@ a:hover {
 
 /* ホーム */
 .home .form_select {
+  padding: 3px 5px;
   width: 130px;
   height: 30px;
-  font-size: 12px;
+  font-size: 13.5px;
 }
 
 .home .form_btn_2 {
   height: 30px;
+  cursor: pointer;
 }
 
 .home .container {
@@ -365,9 +370,17 @@ a:hover {
   margin-right: 0;
 }
 
+.item .wrapper {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 5px;
+  width: 90%
+}
+
 .item .title {
   position: absolute;
-  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -376,24 +389,82 @@ a:hover {
 
 .item .book {
   margin-bottom: 5px;
+  line-height: 1.2;
 }
 
-.item .author {
-  margin-bottom: 0px;
+.item .user {
+  position: absolute;
+  bottom: 65px;
+  right: 30px;
 }
+
+.favorite {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: block;
+  height: 30px;
+  padding: 5px 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  transition: 0.1s;
+}
+
+.favorite:hover {
+  opacity: 1.0;
+  transform: scale(1.05, 1.05);
+}
+
+.favorite_on {
+  border: 1px solid orange;
+}
+
+.fa-star {
+  /* position: absolute;
+  top; 5px; */
+  color: #d3d3d3;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.star_on {
+  color: orange;
+}
+
 
 /* 投稿詳細 */
 .show .container {
-  margin: 100px auto;
+  margin: 50px auto 100px;
   width: 900px;
 }
 
-.show table {
-  margin: 0 auto 50px;
+.show .info {
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
 }
 
-.show th, .show td {
-  padding: 5px;
+.show .book {
+  margin-bottom: 10px;
+}
+
+.show .author  {
+  position: absolute;
+  top: 3px;
+  left: 550px;
+  font-size: 16px;
+}
+
+.show .user {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.show .favorite {
+  position: static;
+  margin-left: auto;
+  width: 72px;
 }
 
 .show .body {
@@ -437,7 +508,7 @@ a:hover {
 
 /* ユーザーページ */
 .user .container {
-  margin: 100px auto;
+  margin: 50px auto 100px;
   width: 850px;
 
 }

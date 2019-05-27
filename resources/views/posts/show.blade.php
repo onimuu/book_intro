@@ -17,12 +17,19 @@
         </div>
       </div>
     </header>
-    <h2 class="heading">投稿詳細</h2>
+    <h2 class="heading">{{ "「" .  $post->title . "」" }}</h2>
     <div class="container">
-      <table class="table">
-        <tr><th>本名</th><td>{{$post->book}}</td></tr>
-        <tr><th>投稿名</th><td>{{$post->title}}</td></tr>
-      </table>
+      <div class="info">
+        <p class="book">{{ "『" . $post->book . "』" }}</p>
+        <p class="author">{{$post->author}} 著</p>
+        <p class="user">{{ $post->user_name }}</p>
+        <object>
+          <a href="/posts/show/{{$post->id}}/favorite" class="favorite @if($post->favorite_user_identify) favorite_on @endif">
+            <i class="fas fa-star @if($post->favorite_user_identify) star_on @endif"></i>×{{$post->favorite}}
+          </a>
+        </object>
+      </div>
+
       <div class="body">
         {{$post->body}}
       </div>

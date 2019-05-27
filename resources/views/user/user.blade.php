@@ -18,7 +18,7 @@
         </div>
       </div>
     </header>
-    <h2 class="heading">ユーザー</h2>
+    <h2 class="heading">マイページ</h2>
     <div class="container">
       <div class="profile">
         @if ($user->avatar_filename)
@@ -35,8 +35,17 @@
           <a class="item" href="/posts/{{$item->id}}">
             <div class="decoration {{$item->genre}}"></div>
             <div class="decoration_inner"></div>
-            <p class="book">{{"『" . $item->book . "』" }}</p>
-            <p class="title">{{$item->title}}</p>
+            <p class="title">{{ "「" .  $item->title . "」" }}</p>
+            <div class="wrapper">
+              <p class="book">{{ "『" . $item->book . "』" }}</p>
+              <p class="author">{{ $item->author }} 著</p>
+            </div>
+            <p class="user">{{ $user->name }}</p>
+            <object>
+              <a href="/user/{{$item->id}}/favorite" class="favorite @if($item->favorite_user_identify) favorite_on @endif">
+                <i class="fas fa-star @if($item->favorite_user_identify) star_on @endif"></i>×{{$item->favorite}}
+              </a>
+            </object>
           </a>
           @endforeach
         </div>

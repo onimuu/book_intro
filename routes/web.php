@@ -52,14 +52,19 @@ Route::get('/posts/{id}/del', 'PostsController@delete')->where('id', '[0-9]+')
 Route::get('/user', 'UserController@show')
 ->middleware('auth');
 
-// ジャンル別表示
-Route::post('/home/genre', 'PostsController@genre');
-
 // 登録情報変更
 Route::get('/user/edit', 'UserController@edit')
 ->middleware('auth');
 Route::post('/user/edit', 'UserController@update');
 
+// ジャンル別表示
+Route::post('/home/genre', 'PostsController@genre');
+
+// いいね機能
+Route::get('/posts/{id}/favorite', 'PostsController@favorite');
+Route::get('/posts/genre/{id}/{genre}/favorite', 'PostsController@genre_favorite');
+Route::get('/user/{id}/favorite', 'PostsController@user_favorite');
+Route::get('/posts/show/{id}/favorite', 'PostsController@show_favorite');
 
 
 Auth::routes();
