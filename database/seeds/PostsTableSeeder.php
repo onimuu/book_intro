@@ -39,7 +39,7 @@ class PostsTableSeeder extends Seeder
           'book' => '統計学は最強の学問である',
           'title' => '統計学の面白さ',
           'body' => '前半は統計学有用さを興味深いエピソードで紹介する。後半は教科書とは違う見方で色々な概念を説明しており、多面的な理解に大いに役立つ。',
-          'author' => 'シュヴェーグラー',
+          'author' => '西内啓',
           'genre' => 'study',
         ];
         DB::table('posts')->insert($param);

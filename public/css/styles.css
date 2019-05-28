@@ -229,10 +229,7 @@ a:hover {
   width: 500px;
   border: 1px solid #a9a9a9;
   text-align: center;
-}
-
-.login .container {
-  margin-bottom: 170px;
+  border-radius: 10px;
 }
 
 .register h2, .login h2 {
@@ -456,14 +453,19 @@ a:hover {
   font-size: 16px;
 }
 
+.show .info .flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .show .user {
-  margin-bottom: 10px;
+  margin-right: 10px;
   text-align: right;
+  line-height: 1.4;
 }
 
 .show .favorite {
   position: static;
-  margin-left: auto;
   width: 72px;
 }
 
@@ -473,9 +475,14 @@ a:hover {
   line-height: 2.0;
 }
 
+.show .btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .show .modify {
   display: block;
-  margin: 30px 0 0 auto;
+  margin-top: 30px;
   width: 96px;
   height: 45px;
   color: #fff;
@@ -486,7 +493,7 @@ a:hover {
 
 .show .delete {
   display: block;
-  margin: 30px 0 0 auto;
+  margin: 30px 0 0 30px;
   width: 96px;
   height: 45px;
   color: #fff;
@@ -520,13 +527,13 @@ a:hover {
 .user .thumbnail, .user .dummy {
   width: 150px;
   height: 150px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
   background-color: #a9a9a9;
   border-radius: 50%;
 }
 
 .user_name {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 25px;
   font-weight: bold;
 }
@@ -681,4 +688,351 @@ a:hover {
   border: 1px solid rgba(0, 0, 0, 0.32);
   box-shadow: none;
   outline: none;
+}
+
+
+@media (max-width: 1085px) {
+  .mv .wrapper {
+    right: 90px;
+  }
+
+  .explain {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .header {
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .header .title {
+    font-size: 15px;
+  }
+
+  .header .right {
+    font-size: 12px;
+  }
+
+  .header .login {
+    margin-right: 10px;
+    padding: 0;
+  }
+
+  .header .signup {
+    margin-right: 10px;
+  }
+
+  .heading {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .mv {
+    height: 250px;
+  }
+
+  .mv .wrapper {
+    top: 75px;
+    right: 12px;
+  }
+
+  .mv .title {
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+
+  .mv .message {
+    padding-left: 10px;
+    font-size: 18px;
+  }
+
+  .mv .btn {
+    display: block;
+    margin-left: 30px;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  .mv .login {
+    padding: 0;
+  }
+
+  .mv .signup {
+    margin-top: 15px;
+    margin-left: 30px;
+  }
+
+  .explain {
+    padding: 30px 10px;
+  }
+
+  .explain .question {
+    font-size: 25px;
+  }
+
+  .explain .answer {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .footer {
+    padding: 8px 0;
+  }
+
+  .footer p {
+    font-size: 10px;
+  }
+
+  .register, .login {
+    padding:0 30px;
+  }
+
+  .register .container, .login .container {
+    margin: 50px auto;
+    padding: 15px 30px;
+    width: 100%;
+  }
+
+  .register h2, .login h2 {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .register .form_text, .login .form_text {
+    margin-bottom: 15px;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .form_btn {
+    font-size: 12px;
+  }
+
+  .main {
+    padding: 0 20px;
+  }
+
+  .home .container {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  .home .genre label {
+    font-size: 14px;
+  }
+
+  .item {
+    margin: 0 auto 30px;
+    width: 60%;
+    height: 250px;
+  }
+
+  .item:nth-child(3n) {
+    margin: 0 auto 30px;
+  }
+
+  .item .user {
+    bottom: 55px;
+  }
+
+  .item .favorite {
+    bottom: 20px;
+  }
+
+  .show .container {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  .show .info {
+    margin-bottom: 10px;
+  }
+
+  .show .book {
+    font-size: 14px;
+  }
+
+  .show .author {
+    top: 3px;
+    left: 220px;
+    font-size: 11px;
+  }
+
+  .show .user {
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .show .favorite {
+    width: 55px;
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .show .fa-star {
+    font-size: 12px;
+  }
+
+  .show .body {
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .show .modify {
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+
+  .show .delete {
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+
+  .show .go_home {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .add .container {
+    margin: 20px auto 0;
+    width: 100%;
+  }
+
+  .add label {
+    font-size: 12px;
+  }
+
+  .add .form_text {
+    margin: 5px 0 15px;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .add .form_select {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .add .textarea-text {
+    margin: 5px 0 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .add .go_home {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .edit .container {
+    margin: 20px auto 0;
+    width: 100%;
+  }
+
+  .edit label {
+    font-size: 12px;
+  }
+
+  .edit .form_text {
+    margin: 5px 0 15px;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .edit .form_select {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .edit .textarea-text {
+    margin: 5px 0 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .edit .go_home {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .user .container {
+    margin: 20px auto 0;
+    width: 100%;
+  }
+
+  .user .profile {
+    margin-bottom: 25px;
+  }
+
+  .user .thumbnail, .user .dummy {
+    margin-bottom: 5px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .user .user_name {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .user .modify {
+    width: 150px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+  }
+
+  .user_edit .container {
+    margin: 20px auto 0;
+    padding: 15px 30px;
+    width: 100%;
+  }
+
+  .user_edit .main {
+    padding: 0 30px;
+  }
+
+  .user_edit label {
+    font-size: 12px;
+  }
+
+  .user_edit .thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+
+  .user_edit .form_file {
+    padding-left: 85px;
+    font-size: 10px;
+  }
+
+  .user_edit .box {
+    margin-bottom: 20px;
+  }
+
+  .user_edit .label {
+    margin-bottom: 5px;
+  }
+
+  .user_edit .form_text {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
 }

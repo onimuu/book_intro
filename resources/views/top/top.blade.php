@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<title>Book Talk</title>
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/styles.css">
-</head>
+@component('components.head')
+  @slot('title')
+  BookTalk
+  @endslot
+@endcomponent
+
 <body>
   <!-- <header class="header">
     <div class="flex">
@@ -20,7 +18,7 @@
   </header> -->
   <section class="mv">
     <div class="wrapper">
-      <h1 class="title">Book Talk</h1>
+      <h1 class="title">BookTalk</h1>
       <p class="message">好きな本を語ろう。</p>
       <div class="buttons">
         <a class="btn login" href="auth/login">ログイン</a>
@@ -30,7 +28,7 @@
 
   </section>
   <section class="explain">
-    <h2 class="question">Book Talkとは？</h2>
+    <h2 class="question">BookTalkとは？</h2>
     <div class="answer">
       <p>好きな本を紹介できる投稿サイト。</p>
       <p>お気に入りの本をシェアしたり、</p>
