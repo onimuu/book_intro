@@ -66,5 +66,8 @@ Route::get('/posts/genre/{id}/{genre}/favorite', 'PostsController@genre_favorite
 Route::get('/user/{id}/favorite', 'PostsController@user_favorite');
 Route::get('/posts/show/{id}/favorite', 'PostsController@show_favorite');
 
+// コメント機能
+Route::post('/posts/{id}/comment', 'CommentsController@store');
+
 
 Auth::routes();

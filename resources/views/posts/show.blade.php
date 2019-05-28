@@ -32,7 +32,6 @@
             </object>
           </div>
         </div>
-
         <div class="body">
           {{$post->body}}
         </div>
@@ -42,6 +41,25 @@
           <a class="delete" href="/posts/{{$post->id}}/del">削除</a>
         </div>
         @endif
+        <form action="/posts/{{$post->id}}/comment" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="user_id" value="{{$user->id}}">
+          @if ($errors->has('comment'))
+          <span class="error">{{$errors->first('comment')}}</span>
+          @endif
+          <textarea class="textarea-text" name="comment" placeholder="コメント"></textarea>
+          <button class="form_btn" type="submit" name="action" value="send">送信</button>
+        </form>
+        @foreach ($post->comments as $comment)
+        <div class="comment_field">
+          <div class="profile">
+            <img class="user_img" src="{{ asset('storage/avatar/' . $comment->user->avatar_filename )}}" alt="">
+            <p class="user_name">{{$comment->user->name}}</p>
+          </div>
+          <div class="triangle"></div>
+          <div class="comment">{{$comment->body}}</div>
+        </div>
+        @endforeach
       </div>
     </main>
 

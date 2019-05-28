@@ -486,7 +486,7 @@ a:hover {
   width: 96px;
   height: 45px;
   color: #fff;
-  background-color: #87cefa;
+  background-color: rgba(0, 0, 0, 0.32);
   text-align: center;
   line-height: 45px;
 }
@@ -502,15 +502,61 @@ a:hover {
   line-height: 45px;
 }
 
-.show .go_home {
+.show form {
+  margin-top: 80px;
+}
+
+.show .error {
+  position: static;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.show .textarea-text {
+  height: 200px;
+}
+
+.show .form_btn {
   display: block;
-  margin: 50px 0 0 auto;
-  width: 150px;
+  margin: 30px 0 0 auto;
+  background-color: #87cefa;
+}
+
+.show .comment_field {
+  position: relative;
+  display: flex;
+  margin-top: 50px;
+}
+
+.show .user_img {
+  display: block;
+  margin-bottom: 5px;
+  width: 50px;
   height: 50px;
-  color: #fff;
-  text-align: center;
-  line-height: 50px;
-  background-color: #a9a9a9;
+  border-radius: 50%;
+}
+
+.show .user_name {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.show .triangle {
+  position: absolute;
+  top: 8px;
+  left: 61px;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #F3F3F3 #ffffff #F3F3F3 #F3F3F3;
+}
+
+.show .comment {
+  margin-left: 30px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 /* ユーザーページ */
@@ -519,7 +565,7 @@ a:hover {
   width: 850px;
 
 }
-.profile {
+.user .profile {
   margin-bottom: 50px;
   text-align: center;
 }
@@ -532,7 +578,7 @@ a:hover {
   border-radius: 50%;
 }
 
-.user_name {
+.user .user_name {
   margin-bottom: 20px;
   font-size: 25px;
   font-weight: bold;
@@ -902,10 +948,39 @@ a:hover {
     line-height: 35px;
   }
 
-  .show .go_home {
-    width: 120px;
-    height: 40px;
-    line-height: 40px;
+  .show form {
+    margin-top: 40px;
+  }
+
+  .show .textarea-text {
+    height: 100px;
+    font-size: 12px;
+  }
+
+  .show .form_btn {
+    margin: 20px 0 0 auto;
+  }
+
+  .show .user_img {
+    width: 25px;
+    height: 25px;
+    margin: 0 0 2px 2px;
+  }
+
+  .show .user_name {
+    font-size: 10px;
+  }
+
+  .show .triangle {
+    top: 6px;
+    left: 31px;
+    border-width: 6px;
+  }
+
+  .show .comment {
+    margin-left: 15px;
+    font-size: 12px;
+    border-radius: 5px;
   }
 
   .add .container {
