@@ -14,8 +14,8 @@
         <div class="right flex">
           <div><a class="home" href="/home">HOME</a></div>
           <div><a class="my_page" href="/user">
-            <img class="header_img" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}" alt="">
-            {{$user->name}}          
+            <img class="header_img" src="data:image/png;base64,{{$user->image}}" alt="">
+            {{$user->name}}
           </a></div>
         </div>
       </div>
@@ -27,8 +27,8 @@
           {{ csrf_field() }}
           <div class="box first">
             <label class="label">プロフィール画像</label>
-            @if ($user->avatar_filename)
-              <img class="thumbnail" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}">
+            @if ($user->image)
+              <img class="thumbnail" src="data:image/png;base64,{{$user->image}}">
             @else
               <span class="dummy"></span>
             @endif

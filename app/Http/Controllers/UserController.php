@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\User;
-use App\http\Requests\UsersRequest;
+use App\Http\Requests\UsersRequest;
 
 
 class UserController extends Controller
@@ -29,10 +29,11 @@ class UserController extends Controller
     $user = Auth::user();
     $user->name = $request->name;
     $user->email = $request->email;
-    if ($request->photo) {
-      $filename = $request->file('photo')->store('public/avatar');
-      $user->avatar_filename = basename($filename);
-    }
+    $user->image = base64_encode(file_get_contents($request->photo->getRealPath()));
+    // if ($request->photo) {
+    //   $filename = $request->file('photo')->store('public/avatar');
+    //   $user->avatar_filename = basename($filename);
+    // }
     $user->save();
 
     return redirect('/user');

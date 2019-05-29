@@ -939,6 +939,11 @@ a:hover {
     bottom: 20px;
   }
 
+  .genre .container {
+    margin: 20px auto;
+    width: 100%;
+  }
+
   .show .container {
     margin: 20px auto;
     width: 100%;

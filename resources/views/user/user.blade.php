@@ -21,8 +21,8 @@
       <h2 class="heading">マイページ</h2>
       <div class="container">
         <div class="profile">
-          @if ($user->avatar_filename)
-            <img class="thumbnail" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}">
+          @if ($user->image)
+            <img class="thumbnail" src="data:image/png;base64,{{$user->image}}">
           @else
             <div class="dummy"></div>
           @endif

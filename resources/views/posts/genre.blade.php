@@ -13,7 +13,7 @@
         <div class="right flex">
           <div><a class="home" href="/home">HOME</a></div>
           <div><a class="my_page" href="/user">
-            <img class="header_img" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}" alt="">
+            <img class="header_img" src="data:image/png;base64,{{$user->image}}" alt="">
             {{$user->name}}
           </a></div>
           <div class="click_area">
