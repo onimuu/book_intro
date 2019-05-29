@@ -28,7 +28,7 @@ class PostsRequest extends FormRequest
             'book' => 'required',
             'author' => 'required',
             'genre' => 'required',
-            'body' => 'required|max: 400',
+            'body' => 'required',
         ];
     }
 
@@ -40,7 +40,6 @@ class PostsRequest extends FormRequest
         'author.required' => '必須項目です。',
         'genre.required' => '必須項目です。',
         'body.required' => '必須項目です。',
-        'body.max' => '400字以内で入力して下さい。',
       ];
     }
 }

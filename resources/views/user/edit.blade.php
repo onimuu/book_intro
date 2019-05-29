@@ -12,9 +12,11 @@
           <h1><a class="title" href="/"><i class="fas fa-book-open"></i>BookTalk</a></h1>
         </div>
         <div class="right flex">
-          <div><a class="login" href="/posts/add">投稿</a></div>
-          <div><a class="signup" href="/user">{{$user->name}}</a></div>
-          <div><a class="logout" href="/auth/logout">ログアウト</a></div>
+          <div><a class="home" href="/home">HOME</a></div>
+          <div><a class="my_page" href="/user">
+            <img class="header_img" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}" alt="">
+            {{$user->name}}          
+          </a></div>
         </div>
       </div>
     </header>
@@ -50,6 +52,8 @@
       </div>
     </div>
   </main>
+  @component('components.footer')
+  @endcomponent
 
 </body>
 </html>

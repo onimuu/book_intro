@@ -11,9 +11,11 @@
           <h1><a class="title" href="/"><i class="fas fa-book-open"></i>BookTalk</a></h1>
         </div>
         <div class="right flex">
-          <div><a class="login" href="/posts/add">投稿</a></div>
-          <div><a class="signup" href="/user">{{$user->name}}</a></div>
-          <div><a class="logout" href="/auth/logout">ログアウト</a></div>
+          <div><a class="post" href="/posts/add">投稿</a></div>
+          <div><a class="my_page" href="/user">
+            <img class="header_img" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}" alt="">
+            {{$user->name}}
+          </a></div>
           <div class="click_area">
               <a class="my_page" href="#">マイページ</a>
               <a class="logout" href="#">ログアウト</a>
@@ -52,7 +54,7 @@
               <p class="book">{{ "『" . $item->book . "』" }}</p>
               <p class="author">{{ $item->author }} 著</p>
             </div>
-            <p class="user">{{ $item->user_name }}</p>
+            <p class="user">{{ $item->user->name }}</p>
             <object>
               <a href="/posts/{{$item->id}}/favorite" class="favorite @if($item->favorite_user_identify) favorite_on @endif">
                 <i class="fas fa-star @if($item->favorite_user_identify) star_on @endif"></i>×{{$item->favorite}}
@@ -65,6 +67,8 @@
       </div>
     </div>
   </main>
+  @component('components.footer')
+  @endcomponent
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

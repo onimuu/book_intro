@@ -42,14 +42,33 @@ a:hover {
   color: #fff;
 }
 
-.header .login {
+.header .post {
+  margin-right: 70px;
+  color: #fff;
+}
+
+.header .my_page {
+  position: relative;
+  color: #fff;
+}
+
+.header_img {
+  position: absolute;
+  top: -8px;
+  left: -37px;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.header .home {
   margin-right: 50px;
   color: #fff;
 }
 
-.header .signup {
-  margin-right: 50px;
-  color: #fff;
+.user_edit .home, .show .home, .add .home, .genre .home, .edit .home {
+  margin-right: 70px;
 }
 
 .header .logout {
@@ -230,6 +249,10 @@ a:hover {
   border: 1px solid #a9a9a9;
   text-align: center;
   border-radius: 10px;
+}
+
+.login .container {
+  margin: 100px auto 172px;
 }
 
 .register h2, .login h2 {
@@ -429,6 +452,30 @@ a:hover {
 }
 
 
+/* ジャンル別表示 */
+.genre .form_select {
+  padding: 3px 5px;
+  width: 130px;
+  height: 30px;
+  font-size: 13.5px;
+}
+
+.genre .form_btn_2 {
+  height: 30px;
+  cursor: pointer;
+}
+
+.genre .container {
+  margin: 50px auto 100px;
+  width: 850px;
+}
+
+.genre .genre {
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+
 /* 投稿詳細 */
 .show .container {
   margin: 50px auto 100px;
@@ -443,13 +490,12 @@ a:hover {
 }
 
 .show .book {
+  display: inline-block;
   margin-bottom: 10px;
 }
 
 .show .author  {
-  position: absolute;
-  top: 3px;
-  left: 550px;
+  display: inline-block;
   font-size: 16px;
 }
 

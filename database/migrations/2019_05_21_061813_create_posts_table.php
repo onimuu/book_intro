@@ -15,8 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->string('user_name');
+            $table->bigInteger('user_id')->unsigned();
             $table->string('book');
             $table->string('title');
             $table->string('author');
@@ -25,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->integer('favorite')->default(0);
             $table->boolean('favorite_user_identify')->default(0);
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

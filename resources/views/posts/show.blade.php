@@ -12,8 +12,11 @@
           <h1><a class="title" href="/"><i class="fas fa-book-open"></i>BookTalk</a></h1>
         </div>
         <div class="right flex">
-          <a class="login" href="/posts/add">投稿</a>
-          <a class="signup" href="/user">{{$user->name}}</a>
+          <div><a class="home" href="/home">HOME</a></div>
+          <div><a class="my_page" href="/user">
+            <img class="header_img" src="{{ asset('storage/avatar/' . $user->avatar_filename )}}" alt="">
+            {{$user->name}}
+          </a></div>
         </div>
       </div>
     </header>
@@ -24,7 +27,7 @@
           <p class="book">{{ "『" . $post->book . "』" }}</p>
           <p class="author">{{$post->author}} 著</p>
           <div class="flex">
-            <p class="user">{{ $post->user_name }}</p>
+            <p class="user">{{ $post->user->name }}</p>
             <object>
               <a href="/posts/show/{{$post->id}}/favorite" class="favorite @if($post->favorite_user_identify) favorite_on @endif">
                 <i class="fas fa-star @if($post->favorite_user_identify) star_on @endif"></i>×{{$post->favorite}}
@@ -33,7 +36,7 @@
           </div>
         </div>
         <div class="body">
-          {{$post->body}}
+          {!! nl2br($post->body) !!}
         </div>
         @if ($user->id === $post->user_id)
         <div class="btns">
@@ -57,11 +60,14 @@
             <p class="user_name">{{$comment->user->name}}</p>
           </div>
           <div class="triangle"></div>
-          <div class="comment">{{$comment->body}}</div>
+          <div class="comment">{!! nl2br($comment->body) !!}</div>
         </div>
         @endforeach
       </div>
     </main>
+    @component('components.footer')
+    @endcomponent
+
 
 </body>
 </html>
