@@ -40,8 +40,8 @@
         </div>
         @if ($user->id === $post->user_id)
         <div class="btns">
-          <a class="modify" href="/posts/{{$post->id}}/edit">編集</a>
-          <a class="delete" href="/posts/{{$post->id}}/del">削除</a>
+          <a class="btn modify" href="/posts/{{$post->id}}/edit">編集</a>
+          <a class="btn delete" href="/posts/{{$post->id}}/del">削除</a>
         </div>
         @endif
         <form action="/posts/{{$post->id}}/comment" method="post">
@@ -56,7 +56,7 @@
         @foreach ($post->comments as $comment)
         <div class="comment_field">
           <div class="profile">
-            <img class="user_img" src="{{ asset('storage/avatar/' . $comment->user->avatar_filename )}}" alt="">
+            <img class="user_img" src="data:image/png;base64,{{$user->image}}" alt="">
             <p class="user_name">{{$comment->user->name}}</p>
           </div>
           <div class="triangle"></div>

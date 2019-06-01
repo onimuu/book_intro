@@ -41,7 +41,7 @@
               <option value="business">ビジネス・実用書</option>
               <option value="others">その他</option>
             </select>
-            <button class="form_btn_2" type="submit" name="action" value="send">表示</button>
+            <button class="form_btn" type="submit" name="action" value="send">表示</button>
           </form>
         </div>
         <div class="items">
@@ -69,6 +69,7 @@
   </main>
   @component('components.footer')
   @endcomponent
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

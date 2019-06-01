@@ -22,10 +22,13 @@
       <p class="message">好きな本を語ろう。</p>
       <div class="buttons">
         <a class="btn login" href="auth/login">ログイン</a>
-        <a class="btn signup" href="auth/register">会員登録</a>
+        <a class="btn signup" href="auth/register">新規登録</a>
       </div>
     </div>
-
+  </section>
+  <section class="section_buttons">
+    <a class="btn login" href="auth/login">ログイン</a>
+    <a class="btn signup" href="auth/register">新規登録</a>
   </section>
   <section class="explain">
     <h2 class="question">BookTalkとは？</h2>

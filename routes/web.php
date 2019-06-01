@@ -58,13 +58,14 @@ Route::get('/user/edit', 'UserController@edit')
 Route::post('/user/edit', 'UserController@update');
 
 // ジャンル別表示
-Route::post('/home/genre', 'PostsController@genre');
+Route::get('/home/{genre}', 'PostsController@genre_get');
+Route::post('/home/genre', 'PostsController@genre_post');
 
 // いいね機能
-Route::get('/posts/{id}/favorite', 'PostsController@favorite');
-Route::get('/posts/genre/{id}/{genre}/favorite', 'PostsController@genre_favorite');
-Route::get('/user/{id}/favorite', 'PostsController@user_favorite');
-Route::get('/posts/show/{id}/favorite', 'PostsController@show_favorite');
+Route::get('/posts/{id}/favorite', 'LikesController@favorite');
+Route::get('/posts/genre/{id}/{genre}/favorite', 'LikesController@genre_favorite');
+Route::get('/user/{id}/favorite', 'LikesController@user_favorite');
+Route::get('/posts/show/{id}/favorite', 'LikesController@show_favorite');
 
 // コメント機能
 Route::post('/posts/{id}/comment', 'CommentsController@store');

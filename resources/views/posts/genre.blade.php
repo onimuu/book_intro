@@ -40,7 +40,7 @@
               <option value="business" @if($item_genre=='business') selected @endif>ビジネス・実用書</option>
               <option value="others" @if($item_genre=='others') selected @endif>その他</option>
             </select>
-            <button class="form_btn_2" type="submit" name="action" value="send">表示</button>
+            <button class="form_btn type="submit" name="action" value="send">表示</button>
           </form>
         </div>
         <div class="items">
@@ -55,7 +55,7 @@
             </div>
             <p class="user">{{ $user->name }}</p>
             <object>
-              <a href="/posts/genre/{{$item->id}}/{{$item_genre}}/favorite" class="favorite @if($item->favorite_user_identify) favorite_on @endif">
+              <a href="/posts/genre/{{$item->id}}/{{$item->genre}}/favorite" class="favorite @if($item->favorite_user_identify) favorite_on @endif">
                 <i class="fas fa-star @if($item->favorite_user_identify) star_on @endif"></i>×{{$item->favorite}}
               </a>
             </object>

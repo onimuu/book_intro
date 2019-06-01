@@ -56,14 +56,14 @@
             </select>
             <span class="error">{{$errors->first('genre')}}</span>
           </div>
-          <div class="box">
+          <div class="box last">
             <label for="book">本文(400字以内)</label>
             <textarea class="textarea-text" name="body">{{$post->body}}</textarea>
             <span class="error">{{$errors->first('body')}}</span>
           </div>
           <button class="form_btn" type="submit" name="action" value="send">更新</button>
         </form>
-        <a class="go_home" href="/home">ホームへ戻る</a>
+        <a class="btn quit" href="/home">編集をやめる</a>
       </div>
     </div>
   </main>
