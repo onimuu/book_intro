@@ -10,21 +10,29 @@
         <div class="left">
           <h1><a class="title" href="/"><i class="fas fa-book-open"></i>BookTalk</a></h1>
         </div>
+        <i class="fas fa-bars menu_btn"></i>
         <div class="right flex">
-          <div><a class="post" href="/posts/add">投稿</a></div>
-          <div><a class="my_page" href="/user">
-            <img class="header_img" src="data:image/png;base64,{{$user->image}}" alt="">
-            {{$user->name}}
-          </a></div>
-          <div class="click_area">
-              <a class="my_page" href="#">マイページ</a>
-              <a class="logout" href="#">ログアウト</a>
+          <div><a class="post" href="/home">HOME</a></div>
+          <div><a class="post" href="/posts/add">新規投稿</a></div>
+          <div class="header_user" id="header_user">
+            <img class="user_img" src="data:image/png;base64,{{$user->image}}" alt="">
+            <p class="user_name">{{$user->name}}</p>
+          </div>
+          <div class="click_area hidden" id="click_area">
+              <a class="my_page" href="/user">マイページ</a>
+              <a class="logout" href="/auth/logout">ログアウト</a>
           </div>
         </div>
       </div>
     </header>
+    <div class="menu hidden" id="menu">
+      <a class="menu_item" href="/home">HOME</a>
+      <a class="menu_item" href="/posts/add">新規投稿</a>
+      <a class="menu_item" href="/user">マイページ</a>
+      <a class="menu_item" href="/auth/logout">ログアウト</a>
+    </div>
     <main class="main">
-      <h2 class="heading">投稿一覧</h2>
+      <h2 class="heading">HOME</h2>
       <div class="container">
         <div class="genre">
           <form action="/home/genre" method="post">
@@ -70,9 +78,6 @@
   @component('components.footer')
   @endcomponent
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="/js/script.js"></script>
 </body>
 </html>

@@ -12,11 +12,16 @@
           <h1><a class="title" href="/"><i class="fas fa-book-open"></i>BookTalk</a></h1>
         </div>
         <div class="right flex">
-          <div><a class="home" href="/home">HOME</a></div>
-          <div><a class="my_page" href="/user">
-            <img class="header_img" src="data:image/png;base64,{{$user->image}}" alt="">
-            {{$user->name}}
-          </a></div>
+          <div><a class="post" href="/home">HOME</a></div>
+          <div><a class="post" href="/posts/add">新規投稿</a></div>
+          <div class="header_user" id="header_user">
+            <img class="user_img" src="data:image/png;base64,{{$user->image}}" alt="">
+            <p class="user_name">{{$user->name}}</p>
+          </div>
+          <div class="click_area hidden" id="click_area">
+              <a class="my_page" href="/user">マイページ</a>
+              <a class="logout" href="/auth/logout">ログアウト</a>
+          </div>
         </div>
       </div>
     </header>
@@ -71,7 +76,6 @@
   @endcomponent
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="/js/script.js"></script>
 </body>
 </html>

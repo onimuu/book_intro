@@ -43,32 +43,34 @@ a:hover {
 }
 
 .header .post {
-  margin-right: 70px;
+  margin-right: 40px;
   color: #fff;
 }
 
-.header .my_page {
-  position: relative;
+.header .header_user {
   color: #fff;
+  user-select: none;
+  cursor: pointer;
+}
+.header .header_user:hover {
+  opacity: 0.7;
 }
 
-.header_img {
-  position: absolute;
-  top: -8px;
-  left: -37px;
+.header .user_img {
   display: inline-block;
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  vertical-align: middle;
+}
+
+.header .user_name {
+  display: inline-block;
 }
 
 .header .home {
-  margin-right: 50px;
+  margin-right: 40px;
   color: #fff;
-}
-
-.user_edit .home, .show .home, .add .home, .genre .home, .edit .home {
-  margin-right: 70px;
 }
 
 .header .logout {
@@ -76,21 +78,31 @@ a:hover {
 }
 
 .click_area {
-  display: none;
   position: absolute;
   bottom: -79px;
-  right: -60px;
+  right: -15px;
   padding: 15px;
   line-height: 1;
   background-color: #fff;
 }
+
+.hidden {
+  display: none;
+}
+
 .click_area .my_page {
   display: block;
   margin-bottom: 20px;
+  color: #2e425b;
 }
 
-.click_area .log_out {
+.click_area .logout {
   display: block;
+  color: #2e425b;
+}
+
+.header .menu_btn {
+  display: none;
 }
 
 .heading {
@@ -579,20 +591,6 @@ a:hover {
   margin-top: 50px;
 }
 
-.show .user_img {
-  display: block;
-  margin-bottom: 5px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.show .user_name {
-  font-size: 16px;
-  font-weight: normal;
-  text-align: center;
-}
-
 .show .triangle {
   position: absolute;
   top: 8px;
@@ -630,7 +628,7 @@ a:hover {
   border-radius: 50%;
 }
 
-.user .user_name {
+.user .container .user_name {
   margin-bottom: 20px;
   font-size: 25px;
   font-weight: bold;
@@ -810,7 +808,38 @@ a:hover {
   }
 
   .header .right {
+    display: none;
     font-size: 12px;
+  }
+
+  .header .menu_btn {
+    display: inline-block;
+  }
+
+  .header .menu_btn::before {
+    display: block;
+    margin-top: 17px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .menu {
+    padding: 30px;
+    width: 100%;
+    background-color: #fff;
+    font-size: 25px;
+    color: #2e425b;
+    text-align: center;
+  }
+
+  .menu_item {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .menu_item:last-child {
+    margin-bottom: 0;
   }
 
   .header .login {
@@ -830,12 +859,12 @@ a:hover {
     margin-right: 20px;
   }
 
-  .header_img {
-    top: -11px;
-  }
-
   .user_edit .home, .show .home, .add .home, .genre .home, .edit .home {
     margin-right: 50px;
+  }
+
+  .menu_btn {
+    height: 0;
   }
 
   .heading {
