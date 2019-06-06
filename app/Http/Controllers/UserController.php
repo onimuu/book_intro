@@ -15,15 +15,15 @@ class UserController extends Controller
   public function show()
   {
     $user = Auth::user();
-    $items = Post::where('user_id', $user->id)->simplePaginate(6);
-    foreach ($items as $item) {
-      if (count(Like::where('user_id', $user->id)->where('post_id', $item->id)->get())) {
-        $item->favorite_user_identify = 1;
+    $posts = Post::where('user_id', $user->id)->simplePaginate(6);
+    foreach ($posts as $post) {
+      if (count(Like::where('user_id', $user->id)->where('post_id', $post->id)->get())) {
+        $post->favorite_user_identify = 1;
       } else {
-        $item->favorite_user_identify = 0;
+        $post->favorite_user_identify = 0;
       }
     }
-    return view('user/user', ['user' => $user, 'items' => $items]);
+    return view('user/user', ['user' => $user, 'posts' => $posts]);
   }
 
   public function edit()

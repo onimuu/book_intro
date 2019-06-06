@@ -17,7 +17,6 @@ class LikesController extends Controller
     public function genre_favorite($id, $genre)
     {
       // 〜LikesMiddleware処理〜
-      $items = Post::where('genre', $genre)->simplePaginate(6);
       return redirect()->action('PostsController@genre_get', ['genre' => $genre]);
     }
 

@@ -35,7 +35,6 @@ Route::get('/home', 'PostsController@index')
 Route::get('/posts/{id}', 'PostsController@show')->where('id', '[0-9]+')
 ->middleware('auth');
 
-
 // 新規作成
 Route::get('/posts/add', 'PostsController@add')
 ->middleware('auth');

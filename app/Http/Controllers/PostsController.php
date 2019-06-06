@@ -13,15 +13,15 @@ class PostsController extends Controller
   public function index()
   {
     $user = Auth::user();
-    $items = Post::simplePaginate(6);
-    foreach ($items as $item) {
-      if (count(Like::where('user_id', $user->id)->where('post_id', $item->id)->get())) {
-        $item->favorite_user_identify = 1;
+    $posts = Post::simplePaginate(6);
+    foreach ($posts as $post) {
+      if (count(Like::where('user_id', $user->id)->where('post_id', $post->id)->get())) {
+        $post->favorite_user_identify = 1;
       } else {
-        $item->favorite_user_identify = 0;
+        $post->favorite_user_identify = 0;
       }
     }
-    return view('posts.home', ['items' => $items, 'user' => $user]);
+    return view('posts.home', ['posts' => $posts, 'user' => $user]);
   }
 
   public function add()
@@ -84,30 +84,30 @@ class PostsController extends Controller
   public function genre_get($genre)
   {
     $user = Auth::user();
-    $items = Post::where('genre', $genre)->simplePaginate(6);
-    foreach ($items as $item) {
-      if (count(Like::where('user_id', $user->id)->where('post_id', $item->id)->get())) {
-        $item->favorite_user_identify = 1;
+    $posts = Post::where('genre', $genre)->simplePaginate(6);
+    foreach ($posts as $post) {
+      if (count(Like::where('user_id', $user->id)->where('post_id', $post->id)->get())) {
+        $post->favorite_user_identify = 1;
       } else {
-        $item->favorite_user_identify = 0;
+        $post->favorite_user_identify = 0;
       }
     }
-    $item_genre = $genre;
-    return view('posts.genre', ['items' => $items, 'user' => $user, 'item_genre' => $item_genre]);
+    $post_genre = $genre;
+    return view('posts.genre', ['posts' => $posts, 'user' => $user, 'post_genre' => $post_genre]);
   }
 
   public function genre_post(Request $request)
   {
     $user = Auth::user();
-    $items = Post::where('genre', $request->genre)->simplePaginate(6);
-    foreach ($items as $item) {
-      if (count(Like::where('user_id', $user->id)->where('post_id', $item->id)->get())) {
-        $item->favorite_user_identify = 1;
+    $posts = Post::where('genre', $request->genre)->simplePaginate(6);
+    foreach ($posts as $post) {
+      if (count(Like::where('user_id', $user->id)->where('post_id', $post->id)->get())) {
+        $post->favorite_user_identify = 1;
       } else {
-        $item->favorite_user_identify = 0;
+        $post->favorite_user_identify = 0;
       }
     }
-    $item_genre = $request->genre;
-    return view('posts.genre', ['items' => $items, 'user' => $user, 'item_genre' => $item_genre]);
+    $post_genre = $request->genre;
+    return view('posts.genre', ['posts' => $posts, 'user' => $user, 'post_genre' => $post_genre]);
   }
 }
