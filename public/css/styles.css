@@ -79,7 +79,7 @@ a:hover {
 
 .click_area {
   position: absolute;
-  bottom: -79px;
+  top: 60px;
   right: -15px;
   padding: 15px;
   line-height: 1;
