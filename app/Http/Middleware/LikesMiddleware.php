@@ -20,20 +20,20 @@ class LikesMiddleware
     {
       $id = $request->route()->parameter('id');
       $user = Auth::User();
-      $item = Post::find($id);
-      if (count(Like::where('user_id', $user->id)->where('post_id', $item->id)->get())) {
+      $post = Post::find($id);
+      if (count(Like::where('user_id', $user->id)->where('post_id', $post->id)->get())) {
         // 星削除
-        $item->favorite -= 1;
-        Like::where('user_id', $user->id)->where('post_id', $item->id)->delete();
+        $post->favorite -= 1;
+        Like::where('user_id', $user->id)->where('post_id', $post->id)->delete();
       } else {
         // 星追加
-        $item->favorite += 1;
+        $post->favorite += 1;
         $like = new Like;
         $like->user_id = $user->id;
-        $like->post_id = $item->id;
+        $like->post_id = $post->id;
         $like->save();
       }
-      $item->save();
+      $post->save();
 
       return $next($request);
     }

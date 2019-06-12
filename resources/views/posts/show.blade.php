@@ -13,9 +13,9 @@
     <div class="flex">
       <p class="user">{{ $post->user->name }}</p>
       <object>
-        <a href="/posts/show/{{$post->id}}/favorite" class="favorite @if($post->favorite_user_identify) favorite_on @endif">
-          <i class="fas fa-star @if($post->favorite_user_identify) star_on @endif"></i>×{{$post->favorite}}
-        </a>
+        <div data-id="{{$post->id}}" class="favorite @if($post->favorite_user_identify) favorite_on @endif">
+          <i class="fas fa-star @if($post->favorite_user_identify) star_on @endif"></i>×<span class="count">{{$post->favorite}}</span>
+        </div>
       </object>
     </div>
   </div>

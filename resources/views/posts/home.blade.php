@@ -27,21 +27,21 @@
   </div>
   <div class="items">
     @foreach ($posts as $post)
-    <a class="item" href="/posts/{{$post->id}}">
+    <div class="item">
       <div class="decoration {{$post->genre}}"></div>
       <div class="decoration_inner"></div>
-      <div class="title">{{ "「" .  $post->title . "」" }}</div>
-      <div class="wrapper">
+      <a href="/posts/{{$post->id}}" class="title">{{ "「" .  $post->title . "」" }}</a>
+      <a href="/posts/{{$post->id}}" class="wrapper">
         <p class="book">{{ "『" . $post->book . "』" }}</p>
         <p class="author">{{ $post->author }} 著</p>
-      </div>
+      </a>
       <p class="user">{{ $post->user->name }}</p>
       <object>
-        <a href="/posts/{{$post->id}}/favorite" class="favorite @if($post->favorite_user_identify) favorite_on @endif">
-          <i class="fas fa-star @if($post->favorite_user_identify) star_on @endif"></i>×{{$post->favorite}}
-        </a>
+        <div data-id="{{$post->id}}" class="favorite @if($post->favorite_user_identify) favorite_on @endif">
+          <i class="fas fa-star @if($post->favorite_user_identify) star_on @endif"></i>×<span class="count">{{$post->favorite}}</span>
+        </div>
       </object>
-    </a>
+    </div>
     @endforeach
   </div>
   {{ $posts->links() }}

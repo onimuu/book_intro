@@ -63,14 +63,7 @@ Route::get('/home/{genre}', 'PostsController@genre_get');
 Route::post('/home/genre', 'PostsController@genre_post');
 
 // いいね機能
-Route::get('/posts/{id}/favorite', 'LikesController@favorite')
-->middleware(LikesMiddleware::class);
-Route::get('/posts/genre/{id}/{genre}/favorite', 'LikesController@genre_favorite')
-->middleware(LikesMiddleware::class);
-Route::get('/user/{id}/favorite', 'LikesController@user_favorite')
-->middleware(LikesMiddleware::class);
-Route::get('/posts/show/{id}/favorite', 'LikesController@show_favorite')
-->middleware(LikesMiddleware::class);
+Route::post('/posts/favorite', 'LikesController@favorite');
 
 // コメント機能
 Route::post('/posts/{id}/comment', 'CommentsController@store');
