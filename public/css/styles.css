@@ -230,10 +230,6 @@ a:hover {
   margin-bottom: 50px;
   font-size: 24px;
 }
-#modalWindow .btns {
-  /* display: flex;
-  justify-content: center; */
-}
 #modalWindow .no {
   margin-bottom: 20px;
   width: 100%;
@@ -346,9 +342,52 @@ a:hover {
 
 /* 新規作成ページ */
 .add .container {
-  margin: 100px auto;
+  margin: 50px auto 100px;
   width: 900px;
 }
+
+.add .preserve_area {
+  margin: 0 auto 50px;
+  width: 600px;
+  padding: 10px;
+  background: #fff;
+  border: 2px solid #d04255;
+  border-radius: 5px;
+}
+
+.add .preserve_item {
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.add .preserve_item:last-child {
+  border-bottom: none;
+}
+
+.add .preserve_select {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+}
+
+.add .preserve_item .use {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.add .preserve_item .use:hover {
+  opacity: 0.7;
+}
+
+.add .preserve_item .delete {
+  cursor: pointer;
+}
+
+.add .preserve_item .delete:hover {
+  opacity: 0.7;
+}
+
 
 .add .form_text {
   margin: 10px 0 30px;
@@ -368,10 +407,14 @@ a:hover {
   margin-left: auto;
 }
 
-.add .quit {
+.add .save {
   margin: 50px 0 0 auto;
   width: 150px;
   background-color: #800000;
+}
+
+.add .quit:hover {
+  opacity: 0.7;
 }
 
 /* 記事編集 */
@@ -1013,11 +1056,11 @@ a:hover {
   }
 
   .footer {
-    padding: 8px 0;
+    padding: 15px 0;
   }
 
   .footer p {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .register, .login {
@@ -1209,6 +1252,26 @@ a:hover {
     margin: 20px auto 30px;
     width: 100%;
   }
+  .add .preserve_area {
+    width: 100%;
+    text-align: center;
+  }
+
+  .add .preserve_item {
+    padding: 15px 0 14px;
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  .add .preserve_select {
+    position: static;
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .add .preserve_item .use {
+    margin-right: 45px;
+  }
 
   .add label {
     font-size: 12px;
@@ -1240,7 +1303,7 @@ a:hover {
     bottom: 0;
   }
 
-  .add .quit {
+  .add .save {
     margin: 10px 0 0 0;
     width: 100%;
   }

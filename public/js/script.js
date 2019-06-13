@@ -17,7 +17,6 @@ $(function() {
     type: 'POST',
     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
   });
-
   $(".favorite").click(function() {
     var id = $(this).data('id');
     $.ajax({
@@ -40,7 +39,52 @@ $(function() {
     });
   });
 
-  // 削除アラート
+  // 下書き利用
+  $(".use").click(function() {
+    var id = $(this).parents('.preserve_item').data('id');
+    $.ajax({
+      url: '/posts/preserve/use',
+      type: 'get',
+      dataType: 'json',
+      context: this,
+      data: {
+        id: id
+      }
+    }).done(function(res) {
+      $("#title").val(res.title);
+      $("#book").val(res.book);
+      $("#author").val(res.author);
+      $(`#${res.genre}`).attr("selected", "");
+      $("#body").val(res.body);
+      $(this).parents(".preserve_item").fadeOut();
+      if (res.count === 0) {
+        $(".preserve_area").fadeOut();
+      }
+      $("#count").text(res.count + "件の下書きがありました。");
+    });
+  });
+
+  // 下書き削除
+  $(".delete").click(function() {
+    var id = $(this).parents(".preserve_item").data('id');
+    $.ajax({
+      url: '/posts/preserve/delete',
+      type: 'post',
+      dataType: 'json',
+      context: this,
+      data: {
+        id: id
+      }
+    }).done(function(res) {
+      $(this).parents(".preserve_item").fadeOut();
+      if (res.count === 0) {
+        $(".preserve_area").fadeOut();
+      }
+      $("#count").text(res.count + "件の下書きがありました。");
+    });
+  });
+
+  // 投稿削除アラート
   $("#delete").click(function() {
     $("#overlay").fadeIn();
     $("#modalWindow").fadeIn();
@@ -48,6 +92,6 @@ $(function() {
 
   $("#no").click(function() {
     $("#overlay").fadeOut();
-    $("#modalWindow").fadeOut();    
+    $("#modalWindow").fadeOut();
   });
 });

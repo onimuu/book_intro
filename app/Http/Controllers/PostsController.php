@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Like;
+use App\Preserve;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostsRequest;
 
@@ -27,7 +28,10 @@ class PostsController extends Controller
   public function add()
   {
     $user = Auth::user();
-    return view('posts.add', ['user' => $user]);
+    if (Preserve::where('user_id', $user->id)->get()) {
+      $preserves = Preserve::where('user_id', $user->id)->get();
+    }
+    return view('posts.add', ['user' => $user, 'preserves' => $preserves]);
   }
 
   public function create(PostsRequest $request)

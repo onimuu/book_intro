@@ -76,5 +76,16 @@ Route::post('/posts/favorite', 'LikesController@favorite')
 Route::post('/posts/{id}/comment', 'CommentsController@store')
 ->middleware('auth');
 
+// 下書き保存機能
+Route::post('/posts/preserve', 'PreserveController@store')
+->middleware('auth');
+
+// 下書き使用
+Route::get('/posts/preserve/use', 'PreserveController@use')
+->middleware('auth');
+
+// 下書き削除
+Route::post('/posts/preserve/delete', 'PreserveController@delete')
+->middleware('auth');
 
 Auth::routes();
