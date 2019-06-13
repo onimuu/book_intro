@@ -23,12 +23,12 @@
     {!! nl2br($post->body) !!}
   </div>
   @if ($user->id === $post->user_id)
-  <div class="btns">
-    <a class="btn modify" href="/posts/{{$post->id}}/edit">編集</a>
-    <a class="btn delete" href="/posts/{{$post->id}}/del">削除</a>
-  </div>
+    <div class="btns">
+      <a class="btn modify" href="/posts/{{$post->id}}/edit">編集</a>
+      <div class="btn delete" id="delete">削除</div>
+    </div>
   @endif
-  <form action="/posts/{{$post->id}}/comment" method="post">
+  <form action="/posts/{{$post->id}}/comment" method="post" class="comment_form">
     {{ csrf_field() }}
     <input type="hidden" name="user_id" value="{{$user->id}}">
     @if ($errors->has('comment'))
@@ -48,4 +48,14 @@
   </div>
   @endforeach
 </div>
+<div id="overlay"></div>
+<div id="modalWindow">
+  <p class="confirm">本当に削除しますか？</p>
+  <div class="btns">
+    <div class="btn no" id="no">いいえ</div>
+    <a class="btn yes" href="/posts/{{$post->id}}/del">はい</a>
+  </div>
+</div>
+
+
 @endsection

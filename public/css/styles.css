@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
+/* 共通設定 */
 body {
+  position: relative;
   font-family: "YuGothic", sans-serif;
   color: #2e425b;
   background-color: #F3F3F3;
@@ -20,7 +22,11 @@ a:hover {
 .flex {
   display: flex;
 }
+.hidden {
+  display: none;
+}
 
+/* ヘッダー */
 .header {
   width: 100%;
   height: 60px;
@@ -28,25 +34,21 @@ a:hover {
   line-height: 60px;
   background-color: #716246;
 }
-
 .header > .flex {
   justify-content: space-between;
 }
 .header .right {
   position: relative;
 }
-
 .header .title {
   font-size: 25px;
   letter-spacing: 4px;
   color: #fff;
 }
-
 .header .post {
   margin-right: 40px;
   color: #fff;
 }
-
 .header .header_user {
   color: #fff;
   user-select: none;
@@ -55,7 +57,6 @@ a:hover {
 .header .header_user:hover {
   opacity: 0.7;
 }
-
 .header .user_img {
   display: inline-block;
   width: 35px;
@@ -63,20 +64,16 @@ a:hover {
   border-radius: 50%;
   vertical-align: middle;
 }
-
 .header .user_name {
   display: inline-block;
 }
-
 .header .home {
   margin-right: 40px;
   color: #fff;
 }
-
 .header .logout {
   color: #fff;
 }
-
 .click_area {
   position: absolute;
   top: 60px;
@@ -85,43 +82,20 @@ a:hover {
   line-height: 1;
   background-color: #fff;
 }
-
-.hidden {
-  display: none;
-}
-
 .click_area .my_page {
   display: block;
   margin-bottom: 20px;
   color: #2e425b;
 }
-
 .click_area .logout {
   display: block;
   color: #2e425b;
 }
-
 .header .menu_btn {
   display: none;
 }
 
-.heading {
-  margin-top: 50px;
-  font-size: 30px;
-  text-align: center;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.page-item:first-child {
-  margin-right: 10px;
-}
-
-
+/* フッター */
 .footer {
   padding: 20px 0;
   text-align: center;
@@ -129,10 +103,29 @@ a:hover {
   background-color: #3E3E3E;
 }
 
+/* 見出し */
+.heading {
+  margin-top: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.page-item:first-child {
+  margin-right: 10px;
+}
+
+
 .box {
   position: relative;
 }
 
+/* バリデーションエラー */
 .error {
   position: absolute;
   bottom: 10px;
@@ -141,6 +134,7 @@ a:hover {
   font-size: 14px;
 }
 
+/* post装飾 */
 .decoration {
   position: absolute;
   top: -40px;
@@ -153,7 +147,6 @@ a:hover {
   transform: rotate(45deg);
   z-index: -100;
 }
-
 .decoration_inner {
   position: absolute;
   top: -25px;
@@ -166,7 +159,6 @@ a:hover {
   transform: rotate(45deg);
   z-index: -100;
 }
-
 .literature {
   border-color: #F3F3F3 #a0522d #F3F3F3 #F3F3F3;
 }
@@ -192,6 +184,7 @@ a:hover {
   border-color: #F3F3F3 #000 #F3F3F3 #F3F3F3;
 }
 
+/* 各種ボタン */
 .btn {
   display: block;
   width: 96px;
@@ -200,7 +193,6 @@ a:hover {
   line-height: 45px;
   text-align: center;
 }
-
 .form_btn {
   display: block;
   width: 96px;
@@ -208,6 +200,53 @@ a:hover {
   line-height: 45px;
 }
 
+/* モーダルウィンドウ */
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1;
+}
+#modalWindow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  width: 500px;
+  height: 300px;
+  border: 2px solid #d04255;
+  background: #fff;
+  display: none;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 2;
+}
+#modalWindow .confirm {
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+#modalWindow .btns {
+  /* display: flex;
+  justify-content: center; */
+}
+#modalWindow .no {
+  margin-bottom: 20px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.32);
+  cursor: pointer;
+}
+#modalWindow .no:hover {
+  opacity: 0.7;
+}
+#modalWindow .yes {
+  width: 100%;
+  background: #800000;
+}
 
  /* トップページ */
 .mv {
@@ -552,7 +591,7 @@ a:hover {
   line-height: 2.0;
 }
 
-.show .btns {
+.show .container .btns {
   display: flex;
   justify-content: flex-end;
 }
@@ -565,9 +604,14 @@ a:hover {
 .show .delete {
   margin: 30px 0 0 30px;
   background-color: #800000;
+  cursor: pointer;
 }
 
-.show form {
+.show .delete:hover {
+  opacity: 0.7;
+}
+
+.show .comment_form {
   position: relative;
   margin-top: 80px;
 }
@@ -898,6 +942,11 @@ a:hover {
     padding: 0 10px;
   }
 
+  #modalWindow {
+    padding: 50px 10px;
+    width: 100%;
+  }
+
   .mv {
     height: 250px;
   }
@@ -1098,7 +1147,7 @@ a:hover {
     line-height: 2;
   }
 
-  .show .btns {
+  .show .container .btns {
     display: block;
   }
 
@@ -1114,7 +1163,7 @@ a:hover {
     font-size: 15px;
   }
 
-  .show form {
+  .show .comment_form {
     margin-top: 50px;
   }
 
@@ -1131,6 +1180,7 @@ a:hover {
 
   .show .form_btn {
     margin: 20px 0 0 auto;
+    font-size: 15px;
   }
 
   .show .user_img {

@@ -25,7 +25,8 @@ Route::get('auth/login', 'Auth\LoginController@showLoginForm');
 Route::post('auth/login', 'Auth\LoginController@login');
 
 // ログアウト
-Route::get('auth/logout', 'Auth\LoginController@logout');
+Route::get('auth/logout', 'Auth\LoginController@logout')
+->middleware('auth');
 
 // 投稿一覧
 Route::get('/home', 'PostsController@index')
@@ -38,12 +39,14 @@ Route::get('/posts/{id}', 'PostsController@show')->where('id', '[0-9]+')
 // 新規作成
 Route::get('/posts/add', 'PostsController@add')
 ->middleware('auth');
-Route::post('/posts/add', 'PostsController@create');
+Route::post('/posts/add', 'PostsController@create')
+->middleware('auth');
 
 // 投稿編集
 Route::get('/posts/{id}/edit', 'PostsController@edit')->where('id', '[0-9]+')
 ->middleware('auth');
-Route::post('/posts/edit', 'PostsController@update');
+Route::post('/posts/edit', 'PostsController@update')
+->middleware('auth');
 
 // 投稿削除
 Route::get('/posts/{id}/del', 'PostsController@delete')->where('id', '[0-9]+')
@@ -56,17 +59,22 @@ Route::get('/user', 'UserController@show')
 // 登録情報変更
 Route::get('/user/edit', 'UserController@edit')
 ->middleware('auth');
-Route::post('/user/edit', 'UserController@update');
+Route::post('/user/edit', 'UserController@update')
+->middleware('auth');
 
 // ジャンル別表示
-Route::get('/home/{genre}', 'PostsController@genre_get');
-Route::post('/home/genre', 'PostsController@genre_post');
+Route::get('/home/{genre}', 'PostsController@genre_get')
+->middleware('auth');
+Route::post('/home/genre', 'PostsController@genre_post')
+->middleware('auth');
 
 // いいね機能
-Route::post('/posts/favorite', 'LikesController@favorite');
+Route::post('/posts/favorite', 'LikesController@favorite')
+->middleware('auth');
 
 // コメント機能
-Route::post('/posts/{id}/comment', 'CommentsController@store');
+Route::post('/posts/{id}/comment', 'CommentsController@store')
+->middleware('auth');
 
 
 Auth::routes();
