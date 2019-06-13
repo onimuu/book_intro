@@ -89,9 +89,22 @@ $(function() {
     $("#overlay").fadeIn();
     $("#modalWindow").fadeIn();
   });
-
   $("#no").click(function() {
     $("#overlay").fadeOut();
     $("#modalWindow").fadeOut();
+  });
+
+  // 投稿文字数カウント
+  var text_max = 400;
+  $("#text_count").text('残り ' + (text_max - $(".add #body").val().length) + ' 文字');
+  $(".add #body").on('keydown keyup change',function() {
+    var text_length = $(this).val().length;
+    var countdown = text_max - text_length;
+    $("#text_count").text('残り ' + countdown + ' 文字');
+    if (countdown < 0) {
+      $("#text_count").css("color", "tomato");
+    } else {
+      $("#text_count").css("color", "#2e425b");
+    }
   });
 });

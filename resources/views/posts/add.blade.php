@@ -54,7 +54,7 @@
       <span class="error">{{$errors->first('genre')}}</span>
     </div>
     <div class="box last">
-      <label for="book">本文(400字以内)</label>
+      <label for="book">本文 (<span id="text_count"></span>)</label>
       <textarea class="textarea-text" id="body" name="body">{{old('body')}}</textarea>
       <span class="error">{{$errors->first('body')}}</span>
     </div>
