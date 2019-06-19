@@ -5,16 +5,18 @@
 @section('class', 'user')
 
 @section('content')
-<h2 class="heading">マイページ</h2>
+<h2 class="heading">@if ($user->id == $user_id)マイページ @else ユーザーページ @endif</h2>
 <div class="container">
   <div class="profile">
     @if ($user->image)
-      <img class="thumbnail" src="data:image/png;base64,{{$user->image}}">
+    <img class="thumbnail" src="data:image/png;base64,{{$user->image}}">
     @else
-      <div class="dummy"></div>
+    <div class="dummy"></div>
     @endif
-    <div class="user_name">{{$user->name}}</div>
+    <div class="user_name">{{$user_name}}</div>
+    @if ($user->id == $user_id)
     <a class="modify" href="/user/edit">プロフィールを編集する</a>
+    @endif
   </div>
   <div class="my_posts">
     <div class="items">
@@ -27,7 +29,7 @@
           <p class="book">{{ "『" . $post->book . "』" }}</p>
           <p class="author">{{ $post->author }} 著</p>
         </a>
-        <p class="user">{{ $user->name }}</p>
+        <p class="user">{{ $post->user->name }}</p>
         <object>
           <div data-id="{{$post->id}}" class="favorite @if($post->favorite_user_identify) favorite_on @endif">
             <i class="fas fa-star @if($post->favorite_user_identify) star_on @endif"></i>×<span class="count">{{$post->favorite}}</span>

@@ -53,7 +53,7 @@ Route::get('/posts/{id}/del', 'PostsController@delete')->where('id', '[0-9]+')
 ->middleware('auth');
 
 // マイページ
-Route::get('/user', 'UserController@show')
+Route::get('/user/{id}', 'UserController@show')->where('id', '[0-9]+')
 ->middleware('auth');
 
 // 登録情報変更

@@ -19,7 +19,7 @@
   <section class="mv">
     <div class="wrapper">
       <h1 class="title">BookTalk</h1>
-      <p class="message">好きな本を語ろう。</p>
+      <p class="message">好きな本で語ろう。</p>
       <div class="buttons">
         <a class="btn login" href="auth/login">ログイン</a>
         <a class="btn signup" href="auth/register">新規登録</a>

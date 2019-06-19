@@ -39,12 +39,11 @@
   </form>
   @foreach ($post->comments as $comment)
   <div class="comment_field">
-    <div class="profile">
-      <img class="user_img" src="data:image/png;base64,{{$user->image}}" alt="">
+    <a href="/user/{{$comment->user->id}}" class="profile">
+      <img class="user_img" src="data:image/png;base64,{{$comment->user->image}}" alt="">
       <p class="user_name">{{$comment->user->name}}</p>
-    </div>
-    <div class="triangle"></div>
-    <div class="comment">{!! nl2br($comment->body) !!}</div>
+    </a>
+    <div class="comment">{!! nl2br($comment->body) !!}<span class="triangle"></span></div>
   </div>
   @endforeach
 </div>

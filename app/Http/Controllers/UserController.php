@@ -12,18 +12,19 @@ use App\Http\Requests\UsersRequest;
 
 class UserController extends Controller
 {
-  public function show()
+  public function show($id)
   {
-    $user = Auth::user();
-    $posts = Post::where('user_id', $user->id)->simplePaginate(6);
+    $login_user = Auth::user();
+    $show_user_name = User::find($id)->name;
+    $posts = Post::where('user_id', $id)->simplePaginate(6);
     foreach ($posts as $post) {
-      if (count(Like::where('user_id', $user->id)->where('post_id', $post->id)->get())) {
+      if (count(Like::where('user_id', $id)->where('post_id', $id)->get())) {
         $post->favorite_user_identify = 1;
       } else {
         $post->favorite_user_identify = 0;
       }
     }
-    return view('user/user', ['user' => $user, 'posts' => $posts]);
+    return view('user/user', ['user' => $login_user, 'posts' => $posts, 'user_id' => $id, 'user_name' => $show_user_name]);
   }
 
   public function edit()
@@ -46,6 +47,6 @@ class UserController extends Controller
     // }
     $user->save();
 
-    return redirect('/user');
+    return redirect('/user/'. $user->id);
   }
 }

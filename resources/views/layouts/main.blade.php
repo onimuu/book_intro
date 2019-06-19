@@ -25,7 +25,7 @@
             <p class="user_name">{{$user->name}}</p>
           </div>
           <div class="click_area hidden" id="click_area">
-              <a class="my_page" href="/user">マイページ</a>
+              <a class="my_page" href="/user/{{$user->id}}">マイページ</a>
               <a class="logout" href="/auth/logout">ログアウト</a>
           </div>
         </div>
@@ -34,7 +34,7 @@
     <div class="menu hidden" id="menu">
       <a class="menu_item" href="/home">HOME</a>
       <a class="menu_item" href="/posts/add">新規投稿</a>
-      <a class="menu_item" href="/user">マイページ</a>
+      <a class="menu_item" href="/user/{{$user->id}}">マイページ</a>
       <a class="menu_item" href="/auth/logout">ログアウト</a>
     </div>
     <main class="main">

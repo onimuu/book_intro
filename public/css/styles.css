@@ -674,27 +674,39 @@ a:hover {
 }
 
 .show .comment_field {
-  position: relative;
   display: flex;
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.show .profile {
+  text-align: center;
+}
+
+.show .user_img {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.show .comment {
+  position: relative;
+  margin-left: 30px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .show .triangle {
   position: absolute;
   top: 8px;
-  left: 61px;
+  left: -20px;
   width: 0;
   height: 0;
   border-width: 10px;
   border-style: solid;
   border-color: #F3F3F3 #ffffff #F3F3F3 #F3F3F3;
-}
-
-.show .comment {
-  margin-left: 30px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
 }
 
 /* ユーザーページ */
@@ -1238,7 +1250,7 @@ a:hover {
 
   .show .triangle {
     top: 6px;
-    left: 31px;
+    left: -11px;
     border-width: 6px;
   }
 

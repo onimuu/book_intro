@@ -65,7 +65,7 @@ $(function() {
   });
 
   // 下書き削除
-  $(".delete").click(function() {
+  $(".add .delete").click(function() {
     var id = $(this).parents(".preserve_item").data('id');
     $.ajax({
       url: '/posts/preserve/delete',
@@ -85,7 +85,7 @@ $(function() {
   });
 
   // 投稿削除アラート
-  $("#delete").click(function() {
+  $(".show #delete").click(function() {
     $("#overlay").fadeIn();
     $("#modalWindow").fadeIn();
   });
