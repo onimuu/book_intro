@@ -37,7 +37,7 @@ class PostsTableSeeder extends Seeder
 
         $param = [
           'user_id' => '1',
-          'book' => '統計学は最強の学問である',
+          'book' => '統計学が最強の学問である',
           'title' => '統計学の魅力',
           'body' => '統計学の独学を始めるきっかけの一つの本。
           ハリーポッターやハロウィンの新企画で業績を回復させたUSJの森岡毅さんの『USJを劇的に変えた、たった１つの考え方』と併せて読んで、データを根拠に取るべき行動を決める物事の進め方がすごく魅力的に感じられた。
@@ -83,7 +83,7 @@ class PostsTableSeeder extends Seeder
           'book' => '柳宗悦 茶道論集',
           'title' => '「美しい」とは何か',
           'body' => '民藝運動を説いた柳宗悦による茶道論集。',
-          'author' => '熊倉功夫 編',
+          'author' => '柳宗悦',
           'genre' => 'art',
         ];
         DB::table('posts')->insert($param);

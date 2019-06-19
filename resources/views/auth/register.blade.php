@@ -9,6 +9,9 @@
   <div class="register">
     <div class="container">
       <h2>新規登録</h2>
+      <a class="test" href="/auth/login/test" class="" >
+        テストユーザーでログイン
+      </a>
       <form name="registform" action="/auth/register"method="post">
         {{ csrf_field() }}
         <div class="box">

@@ -24,6 +24,9 @@ Route::post('auth/register', 'Auth\RegisterController@register');
 Route::get('auth/login', 'Auth\LoginController@showLoginForm');
 Route::post('auth/login', 'Auth\LoginController@login');
 
+// テストユーザーログイン
+Route::get('auth/login/test', 'Auth\LoginController@testLogin');
+
 // ログアウト
 Route::get('auth/logout', 'Auth\LoginController@logout')
 ->middleware('auth');

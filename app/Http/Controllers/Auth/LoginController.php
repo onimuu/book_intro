@@ -64,4 +64,11 @@ class LoginController extends Controller
       }
     }
 
+    public function testLogin()
+    {
+      $test_user = User::where(['email' => 'test@gmail.com'])->first();
+      Auth::login($test_user);
+      return redirect('/home'); 
+    }
+
 }

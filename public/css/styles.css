@@ -328,6 +328,14 @@ a:hover {
   margin-bottom: 30px;
 }
 
+.register .test, .login .test {
+  display: block;
+  margin-bottom: 20px;
+  padding:20px 0;
+  background: #ffc0cb;
+  border: 3px solid #dc143c;
+}
+
 .register .form_text, .login .form_text {
   margin-bottom: 30px
 }
