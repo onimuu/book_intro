@@ -24,6 +24,7 @@
         </div>
         <button class="form_btn" type="submit" name="action" value="send">ログイン</button>
       </form>
+      <a class="twitter" href="/login/twitter"><i class="fab fa-twitter"></i>twitterでログイン</a>
     </div>
   </div>
   @component('components.footer')

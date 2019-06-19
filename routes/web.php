@@ -88,4 +88,8 @@ Route::get('/posts/preserve/use', 'PreserveController@use')
 Route::post('/posts/preserve/delete', 'PreserveController@delete')
 ->middleware('auth');
 
+// ソーシャルログイン
+Route::get('/login/twitter', 'Auth\LoginController@socialLogin');
+Route::get('/login/twitter/callback', 'Auth\LoginController@handleProviderCallback');
+
 Auth::routes();

@@ -6,17 +6,6 @@
 <body>
   @component('components.header')
   @endcomponent
-  <!-- <header class="header">
-    <div class="flex">
-      <div class="left">
-        <h1><a class="title" href="/">Book Talk</a></h1>
-      </div>
-      <div class="right flex">
-        <a class="login" href="#">ログイン</a>
-        <a class="signup" href="#">新規登録</a>
-      </div>
-    </div>
-  </header> -->
   <div class="register">
     <div class="container">
       <h2>新規登録</h2>
@@ -38,8 +27,9 @@
           <input class="form_text" type="password" name="password_confirmation" size="30" placeholder="パスワード（確認）">
           <span class="error">{{ $errors->first('password_confirmation')}}</span>
         </div>
-        <button class="form_btn type="submit" name="action" value="send">送信</button>
+        <button class="form_btn type="submit" name="action" value="send">登録</button>
       </form>
+      <a class="twitter" href="/login/twitter"><i class="fab fa-twitter"></i>twitterで登録</a>
     </div>
   </div>
   @component('components.footer')

@@ -5,17 +5,21 @@
 @endcomponent
 
 <body>
-  <!-- <header class="header">
+  <header class="header">
     <div class="flex">
       <div class="left">
-        <h1><a class="title" href="/">Book Talk</a></h1>
+        <h1><a class="title" href="/"><i class="fas fa-book-open"></i>BookTalk</a></h1>
       </div>
+      <i class="fas fa-bars menu_btn"></i>
       <div class="right flex">
-        <a class="login" href="#">ログイン</a>
-        <a class="signup" href="#">新規登録</a>
+        <div><a class="post" href="/posts/add">新規投稿</a></div>
       </div>
     </div>
-  </header> -->
+  </header>
+  <div class="menu hidden" id="menu">
+    <a class="menu_item" href="auth/login">ログイン</a>
+    <a class="menu_item" href="auth/register">新規登録</a>
+  </div>
   <section class="mv">
     <div class="wrapper">
       <h1 class="title">BookTalk</h1>
@@ -41,5 +45,9 @@
   <footer class="footer">
     <p>© Book Talk</p>
   </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/script.js"></script>
 </body>
 </html>
