@@ -12,7 +12,8 @@
       </div>
       <i class="fas fa-bars menu_btn"></i>
       <div class="right flex">
-        <div><a class="post" href="/posts/add">新規投稿</a></div>
+        <div><a class="post" href="auth/login">ログイン</a></div>
+        <div><a class="post" href="auth/register">新規登録</a></div>
       </div>
     </div>
   </header>
