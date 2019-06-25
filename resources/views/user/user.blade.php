@@ -1,20 +1,20 @@
 @extends('layouts.main')
 
-@section('title', 'マイページ')
+@section('title', '個人ページ')
 
 @section('class', 'user')
 
 @section('content')
-<h2 class="heading">@if ($user->id == $user_id)マイページ @else ユーザーページ @endif</h2>
+<h2 class="heading">@if ($user->id == $show_user->id)マイページ @else ユーザーページ @endif</h2>
 <div class="container">
   <div class="profile">
-    @if ($user->image)
-    <img class="thumbnail" src="data:image/png;base64,{{$user->image}}">
+    @if ($show_user->image)
+    <img class="thumbnail" src="data:image/png;base64,{{$show_user->image}}">
     @else
     <div class="dummy"></div>
     @endif
-    <div class="user_name">{{$user_name}}</div>
-    @if ($user->id == $user_id)
+    <div class="user_name">{{$show_user->name}}</div>
+    @if ($user->id == $show_user->id)
     <a class="modify" href="/user/edit">プロフィールを編集する</a>
     @endif
   </div>

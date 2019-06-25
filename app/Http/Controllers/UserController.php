@@ -14,8 +14,8 @@ class UserController extends Controller
 {
   public function show($id)
   {
-    $login_user = Auth::user();
-    $show_user_name = User::find($id)->name;
+    $user = Auth::user();
+    $show_user = User::find($id);
     $posts = Post::where('user_id', $id)->simplePaginate(6);
     foreach ($posts as $post) {
       if (count(Like::where('user_id', $id)->where('post_id', $id)->get())) {
@@ -24,7 +24,7 @@ class UserController extends Controller
         $post->favorite_user_identify = 0;
       }
     }
-    return view('user/user', ['user' => $login_user, 'posts' => $posts, 'user_id' => $id, 'user_name' => $show_user_name]);
+    return view('user/user', ['user' => $user, 'posts' => $posts, 'user_id' => $id, 'show_user' => $show_user]);
   }
 
   public function edit()
