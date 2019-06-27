@@ -9,7 +9,7 @@
 好きな本を紹介できる投稿アプリです。
 お気に入りの本をシェアしたり、他の投稿から新たに面白そうな本を探すことができます。
 
-http://ec2-52-192-6-71.ap-northeast-1.compute.amazonaws.com/
+www.book-intro.net.
 
 ## 機能一覧
 
@@ -34,6 +34,7 @@ http://ec2-52-192-6-71.ap-northeast-1.compute.amazonaws.com/
 * EC2
 * RDS(mysql)
 * VPS
+* Route 53
 
 **言語・フレームワーク**
 * PHP 7.3.5
