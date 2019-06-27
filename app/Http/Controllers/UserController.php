@@ -8,7 +8,7 @@ use App\Post;
 use App\User;
 use App\Like;
 use App\Http\Requests\UsersRequest;
-
+use Storage;
 
 class UserController extends Controller
 {
@@ -38,6 +38,7 @@ class UserController extends Controller
     $user = Auth::user();
     $user->name = $request->name;
     $user->email = $request->email;
+
     if ($request->photo) {
       $user->image = base64_encode(file_get_contents($request->photo->getRealPath()));
     }

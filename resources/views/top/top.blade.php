@@ -26,14 +26,12 @@
       <h1 class="title">BookTalk</h1>
       <p class="message">好きな本で語ろう。</p>
       <div class="buttons">
-        <a class="btn login" href="auth/login">ログイン</a>
-        <a class="btn signup" href="auth/register">新規登録</a>
+        <a class="btn test" href="auth/login/test">テストユーザーでログイン</a>
       </div>
     </div>
   </section>
   <section class="section_buttons">
-    <a class="btn login" href="auth/login">ログイン</a>
-    <a class="btn signup" href="auth/register">新規登録</a>
+    <a class="btn test" href="auth/login/test">テストユーザーでログイン</a>
   </section>
   <section class="explain">
     <h2 class="question">BookTalkとは？</h2>

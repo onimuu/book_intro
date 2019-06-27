@@ -9,9 +9,6 @@
   <div class="login">
     <div class="container">
       <h2>ログイン</h2>
-      <a class="test" href="/auth/login/test" class="" >
-        テストユーザーでログイン
-      </a>
       @isset($message)
       <p style="color:red">{{ $message }}</p>
       @endisset
