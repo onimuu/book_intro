@@ -11,6 +11,21 @@
 
 www.book-intro.net.
 
+## 使用技術
+**AWS**
+* EC2
+* RDS(mysql)
+* VPS
+* Route 53
+
+**言語・フレームワーク**
+* PHP 7.3.5
+* Laravel 5.8.26
+* jQuery 2.2.4
+
+**開発環境**
+* Homestead
+
 ## 機能一覧
 
 **ユーザー関連**
@@ -28,21 +43,6 @@ www.book-intro.net.
 * ページネーション
 * お気に入り(Ajax)
 * コメント投稿
-
-## 使用技術
-**AWS**
-* EC2
-* RDS(mysql)
-* VPS
-* Route 53
-
-**言語・フレームワーク**
-* PHP 7.3.5
-* Laravel 5.8.26
-* jQuery 2.2.4
-
-**開発環境**
-* Homestead
 
 
 ## こだわった点
