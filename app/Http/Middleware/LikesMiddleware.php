@@ -34,7 +34,6 @@ class LikesMiddleware
         $like->save();
       }
       $post->save();
-
       return $next($request);
     }
 }

@@ -2,1449 +2,1483 @@
 
 /* 共通設定 */
 body {
-  position: relative;
-  font-family: "YuGothic", sans-serif;
-  color: #2e425b;
-  background-color: #F3F3F3;
+    position: relative;
+    font-family: "YuGothic", sans-serif;
+    color: #2e425b;
+    background-color: #F3F3F3;
 }
+
 *, *::before, *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 a {
-  color: #2e425b;
+    color: #2e425b;
 }
+
 a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 a:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
+
 .flex {
-  display: flex;
+    display: flex;
 }
+
 .hidden {
-  display: none;
+    display: none;
 }
 
 /* ヘッダー */
 .header {
-  width: 100%;
-  height: 60px;
-  padding: 0 50px;
-  line-height: 60px;
-  background-color: #716246;
+    width: 100%;
+    height: 60px;
+    padding: 0 50px;
+    line-height: 60px;
+    background-color: #716246;
 }
-.header > .flex {
-  justify-content: space-between;
+
+.header>.flex {
+    justify-content: space-between;
 }
+
 .header .right {
-  position: relative;
+    position: relative;
 }
+
 .header .title {
-  font-size: 25px;
-  letter-spacing: 4px;
-  color: #fff;
+    font-size: 25px;
+    letter-spacing: 4px;
+    color: #fff;
 }
+
 .header .post {
-  margin-right: 40px;
-  color: #fff;
+    margin-right: 40px;
+    color: #fff;
 }
+
 .header .header_user {
-  color: #fff;
-  user-select: none;
-  cursor: pointer;
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
 }
+
 .header .header_user:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
+
 .header .user_img {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  vertical-align: middle;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    vertical-align: middle;
 }
+
 .header .user_name {
-  display: inline-block;
+    display: inline-block;
 }
+
 .header .home {
-  margin-right: 40px;
-  color: #fff;
+    margin-right: 40px;
+    color: #fff;
 }
+
 .header .logout {
-  color: #fff;
+    color: #fff;
 }
+
 .click_area {
-  position: absolute;
-  top: 60px;
-  right: -15px;
-  padding: 15px;
-  line-height: 1;
-  background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: -15px;
+    padding: 15px;
+    line-height: 1;
+    background-color: #fff;
 }
+
 .click_area .my_page {
-  display: block;
-  margin-bottom: 20px;
-  color: #2e425b;
+    display: block;
+    margin-bottom: 20px;
+    color: #2e425b;
 }
+
 .click_area .logout {
-  display: block;
-  color: #2e425b;
+    display: block;
+    color: #2e425b;
 }
+
 .header .menu_btn {
-  display: none;
+    display: none;
 }
 
 /* フッター */
 .footer {
-  padding: 20px 0;
-  text-align: center;
-  color: #fff;
-  background-color: #3E3E3E;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #3E3E3E;
 }
 
 /* 見出し */
 .heading {
-  margin-top: 50px;
-  font-size: 30px;
-  text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
 }
 
 /* ページネーション */
 .pagination {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.page-item:first-child {
-  margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
+.page-item:first-child {
+    margin-right: 10px;
+}
 
 .box {
-  position: relative;
+    position: relative;
 }
 
 /* バリデーションエラー */
 .error {
-  position: absolute;
-  bottom: 10px;
-  left: 5px;
-  color: tomato;
-  font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    color: tomato;
+    font-size: 14px;
 }
 
 /* post装飾 */
 .decoration {
-  position: absolute;
-  top: -40px;
-  left: -40px;
-  width: 0;
-  height: 0;
-  border-width: 40px;
-  border-style: solid;
-  border-color: #F3F3F3 #ffffff #F3F3F3 #F3F3F3;
-  transform: rotate(45deg);
-  z-index: -100;
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 0;
+    height: 0;
+    border-width: 40px;
+    border-style: solid;
+    border-color: #F3F3F3 #ffffff #F3F3F3 #F3F3F3;
+    transform: rotate(45deg);
+    z-index: -100;
 }
+
 .decoration_inner {
-  position: absolute;
-  top: -25px;
-  left: -25px;
-  width: 0;
-  height: 0;
-  border-width: 25px;
-  border-style: solid;
-  border-color: #F3F3F3;
-  transform: rotate(45deg);
-  z-index: -100;
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 0;
+    height: 0;
+    border-width: 25px;
+    border-style: solid;
+    border-color: #F3F3F3;
+    transform: rotate(45deg);
+    z-index: -100;
 }
+
 .literature {
-  border-color: #F3F3F3 #a0522d #F3F3F3 #F3F3F3;
+    border-color: #F3F3F3 #a0522d #F3F3F3 #F3F3F3;
 }
+
 .philosophy {
-  border-color: #F3F3F3 #ffa500 #F3F3F3 #F3F3F3;
+    border-color: #F3F3F3 #ffa500 #F3F3F3 #F3F3F3;
 }
+
 .art {
-  border-color: #F3F3F3 #ffff00 #F3F3F3 #F3F3F3;
+    border-color: #F3F3F3 #ffff00 #F3F3F3 #F3F3F3;
 }
+
 .religion {
-  border-color: #F3F3F3 #a0522d #F3F3F3 #F3F3F3;
+    border-color: #F3F3F3 #a0522d #F3F3F3 #F3F3F3;
 }
+
 .study {
-  border-color: #F3F3F3 #87cefa #F3F3F3 #F3F3F3;
+    border-color: #F3F3F3 #87cefa #F3F3F3 #F3F3F3;
 }
+
 .technology {
-  border-color: #F3F3F3 #0000ff #F3F3F3 #F3F3F3;
+    border-color: #F3F3F3 #0000ff #F3F3F3 #F3F3F3;
 }
+
 .business {
-  border-color: #F3F3F3 #800080 #F3F3F3 #F3F3F3;
+    border-color: #F3F3F3 #800080 #F3F3F3 #F3F3F3;
 }
+
 .others {
-  border-color: #F3F3F3 #000 #F3F3F3 #F3F3F3;
+    border-color: #F3F3F3 #000 #F3F3F3 #F3F3F3;
 }
 
 /* 各種ボタン */
 .btn {
-  display: block;
-  width: 96px;
-  height: 45px;
-  color: #fff;
-  line-height: 45px;
-  text-align: center;
+    display: block;
+    width: 96px;
+    height: 45px;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
 }
+
 .form_btn {
-  display: block;
-  width: 96px;
-  height: 45px;
-  line-height: 45px;
+    display: block;
+    width: 96px;
+    height: 45px;
+    line-height: 45px;
 }
 
 /* モーダルウィンドウ */
 #overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  display: none;
-  z-index: 1;
-}
-#modalWindow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 50px;
-  width: 500px;
-  height: 300px;
-  border: 2px solid #d04255;
-  background: #fff;
-  display: none;
-  text-align: center;
-  border-radius: 5px;
-  z-index: 2;
-}
-#modalWindow .confirm {
-  margin-bottom: 50px;
-  font-size: 24px;
-}
-#modalWindow .no {
-  margin-bottom: 20px;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.32);
-  cursor: pointer;
-}
-#modalWindow .no:hover {
-  opacity: 0.7;
-}
-#modalWindow .yes {
-  width: 100%;
-  background: #800000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
 }
 
- /* トップページ */
+#modalWindow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    width: 500px;
+    height: 300px;
+    border: 2px solid #d04255;
+    background: #fff;
+    display: none;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+#modalWindow .confirm {
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+
+#modalWindow .no {
+    margin-bottom: 20px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.32);
+    cursor: pointer;
+}
+
+#modalWindow .no:hover {
+    opacity: 0.7;
+}
+
+#modalWindow .yes {
+    width: 100%;
+    background: #800000;
+}
+
+/* トップページ */
 .mv {
-  position: relative;
-  width: 100%;
-  height: 700px;
-  background: url('/img/mv.jpg');
-  background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background: url('/img/mv.jpg');
+    background-size: cover;
 }
 
 .mv .wrapper {
-  position: absolute;
-  top: 280px;
-  right: 130px;
+    position: absolute;
+    top: 280px;
+    right: 130px;
 }
 
 .mv .title {
-  font-size: 60px;
-  margin-bottom: 70px;
-  letter-spacing: 3px;
+    font-size: 60px;
+    margin-bottom: 70px;
+    letter-spacing: 3px;
 }
 
 .mv .message {
-  padding-left: 70px;
-  font-size: 30px;
+    padding-left: 70px;
+    font-size: 30px;
 }
 
 .mv .btn {
-  display: inline-block;
-  width: 200px;
-  height: 60px;
-  margin-top: 100px;
-  line-height: 60px;
-  color: #000;
-  text-align: center;
-  font-size: 20px;
-  border-radius: 5px;
-  background-color: #fff;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    margin-top: 100px;
+    line-height: 60px;
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #fff;
 }
 
 .mv .test {
-  width: 100%;
+    width: 100%;
 }
 
 .mv .signup {
-  margin-left: 30px;
+    margin-left: 30px;
 }
 
 .section_buttons {
-  display: none;
+    display: none;
 }
 
 .explain {
-  margin: 0 auto;
-  padding: 80px 0 80px;
-  width: 1180px;
-  text-align: center;
+    margin: 0 auto;
+    padding: 80px 0 80px;
+    width: 1180px;
+    text-align: center;
 }
 
 .explain .question {
-  font-size: 40px;
+    font-size: 40px;
 }
 
 .explain .answer {
-  margin-top: 80px;
-  font-size: 25px;
-  line-height: 2.5;
+    margin-top: 80px;
+    font-size: 25px;
+    line-height: 2.5;
 }
-
 
 /* 会員登録ページ ログインページ */
 .register .container, .login .container {
-  margin: 100px auto;
-  padding: 30px;
-  width: 500px;
-  border: 1px solid #a9a9a9;
-  text-align: center;
-  border-radius: 10px;
+    margin: 100px auto;
+    padding: 30px;
+    width: 500px;
+    border: 1px solid #a9a9a9;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .login .container {
-  margin: 100px auto 172px;
+    margin: 100px auto 172px;
 }
 
 .register h2, .login h2 {
-  font-size: 20px;
-  margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 .register .test, .login .test {
-  display: block;
-  margin-bottom: 20px;
-  padding:20px 0;
-  background: #ffc0cb;
-  border: 3px solid #dc143c;
+    display: block;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    background: #ffc0cb;
+    border: 3px solid #dc143c;
 }
 
 .register .form_text, .login .form_text {
-  margin-bottom: 30px
+    margin-bottom: 30px
 }
 
 .register .form_btn, .login .form_btn {
-  margin: 0 auto 30px;
-  width: 200px;
+    margin: 0 auto 30px;
+    width: 200px;
 }
 
 .form_btn:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .twitter {
-  display: block;
-  margin: 0 auto;
-  padding: 15px 0;
-  width: 200px;
-  color: #fff;
-  background: #38A1F2;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    width: 200px;
+    color: #fff;
+    background: #38A1F2;
 }
 
-
 .fa-twitter {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 
 /* 新規作成ページ */
 .add .container {
-  margin: 50px auto 100px;
-  width: 900px;
+    margin: 50px auto 100px;
+    width: 900px;
 }
 
 .add .preserve_area {
-  margin: 0 auto 50px;
-  width: 600px;
-  padding: 10px;
-  background: #fff;
-  border: 2px solid #d04255;
-  border-radius: 5px;
+    margin: 0 auto 50px;
+    width: 600px;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #d04255;
+    border-radius: 5px;
 }
 
 .add .preserve_item {
-  position: relative;
-  padding: 10px 0;
-  border-bottom: 1px solid #d3d3d3;
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #d3d3d3;
 }
 
 .add .preserve_item:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .add .preserve_select {
-  position: absolute;
-  right: 10px;
-  display: inline-block;
+    position: absolute;
+    right: 10px;
+    display: inline-block;
 }
 
 .add .preserve_item .use {
-  margin-right: 20px;
-  cursor: pointer;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 .add .preserve_item .use:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .add .preserve_item .delete {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .add .preserve_item .delete:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
-
 .add .form_text {
-  margin: 10px 0 30px;
+    margin: 10px 0 30px;
 }
 
 .add .form_select {
-  margin: 10px 0 30px;
+    margin: 10px 0 30px;
 }
 
 .add .textarea-text {
-  margin: 10px 0 30px;
-  padding: 20px;
-  line-height: 2.0;
+    margin: 10px 0 30px;
+    padding: 20px;
+    line-height: 2.0;
 }
 
 .add .form_btn {
-  margin-left: auto;
+    margin-left: auto;
 }
 
 .add .save {
-  margin: 50px 0 0 auto;
-  width: 150px;
-  background-color: #800000;
+    margin: 50px 0 0 auto;
+    width: 150px;
+    background-color: #800000;
 }
 
 .add .quit:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 /* 記事編集 */
 .edit .container {
-  margin: 100px auto;
-  width: 900px;
+    margin: 100px auto;
+    width: 900px;
 }
 
 .edit .form_text {
-  margin: 10px 0 30px;
+    margin: 10px 0 30px;
 }
 
 .edit .form_select {
-  margin: 10px 0 30px;
+    margin: 10px 0 30px;
 }
 
 .edit .textarea-text {
-  margin: 10px 0 30px;
-  padding: 20px;
-  line-height: 2.0;
+    margin: 10px 0 30px;
+    padding: 20px;
+    line-height: 2.0;
 }
 
 .edit .form_btn {
-  margin-left: auto;
+    margin-left: auto;
 }
 
 .edit .quit {
-  margin: 50px 0 0 auto;
-  width: 150px;
-  background-color: #800000;
+    margin: 50px 0 0 auto;
+    width: 150px;
+    background-color: #800000;
 }
-
 
 /* ホーム */
 .home .form_select {
-  padding: 3px 5px;
-  width: 130px;
-  height: 30px;
-  font-size: 13.5px;
+    padding: 3px 5px;
+    width: 130px;
+    height: 30px;
+    font-size: 13.5px;
 }
 
 .home .form_btn {
-  display: inline-block;
-  width: 50px;
-  height: 30px;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  line-height: 30px;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 30px;
 }
 
 .home .container {
-  margin: 50px auto 100px;
-  width: 850px;
+    margin: 50px auto 100px;
+    width: 850px;
 }
 
 .home .genre {
-  margin-bottom: 30px;
-  text-align: right;
+    margin-bottom: 30px;
+    text-align: right;
 }
 
 .items {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .item {
-  position: relative;
-  display: block;
-  width: calc(33.3% - 34px);
-  height: 300px;
-  margin: 0 50px 50px 0;
-  padding: 30px 20px;
-  font-size: 18px;
-  text-align: center;
-  box-shadow: 0 0 5px rgba(17, 51, 72, 0.2);
+    position: relative;
+    display: block;
+    width: calc(33.3% - 34px);
+    height: 300px;
+    margin: 0 50px 50px 0;
+    padding: 30px 20px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(17, 51, 72, 0.2);
 }
 
 .item:nth-child(3n) {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .item .wrapper {
-  position: absolute;
-  top: 110px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 5px;
-  width: 90%
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+    width: 90%
 }
 
 .item .title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  line-height: 1.3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    line-height: 1.3;
 }
 
 .item .book {
-  margin-bottom: 5px;
-  line-height: 1.2;
+    margin-bottom: 5px;
+    line-height: 1.2;
 }
 
 .item .user {
-  position: absolute;
-  bottom: 65px;
-  right: 30px;
+    position: absolute;
+    bottom: 65px;
+    right: 30px;
 }
 
 .favorite {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  display: block;
-  height: 30px;
-  padding: 5px 10px;
-  border: 1px solid #d3d3d3;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.1s;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: block;
+    height: 30px;
+    padding: 5px 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
 }
 
 .favorite:hover {
-  opacity: 1.0;
-  transform: scale(1.05, 1.05);
+    opacity: 1.0;
+    transform: scale(1.05, 1.05);
 }
 
 .favorite_on {
-  border: 1px solid orange;
+    border: 1px solid orange;
 }
 
 .fa-star {
-  /* position: absolute;
+    /* position: absolute;
   top; 5px; */
-  color: #d3d3d3;
-  font-size: 16px;
-  line-height: 20px;
+    color: #d3d3d3;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .star_on {
-  color: orange;
+    color: orange;
 }
-
 
 /* ジャンル別表示 */
 .genre .form_select {
-  padding: 3px 5px;
-  width: 170px;
-  height: 30px;
-  font-size: 13.5px;
+    padding: 3px 5px;
+    width: 170px;
+    height: 30px;
+    font-size: 13.5px;
 }
 
 .genre .form_btn {
-  display: inline-block;
-  width: 50px;
-  height: 30px;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  line-height: 30px;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 30px;
 }
 
 .genre .container {
-  margin: 50px auto 100px;
-  width: 850px;
+    margin: 50px auto 100px;
+    width: 850px;
 }
 
 .genre .genre {
-  margin-bottom: 30px;
-  text-align: right;
+    margin-bottom: 30px;
+    text-align: right;
 }
-
 
 /* 投稿詳細 */
 .show .container {
-  margin: 50px auto 100px;
-  width: 900px;
+    margin: 50px auto 100px;
+    width: 900px;
 }
 
 .show .info {
-  position: relative;
-  margin-bottom: 20px;
-  font-size: 20px;
-  text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .show .book {
-  display: inline-block;
-  margin-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
-.show .author  {
-  display: inline-block;
-  font-size: 16px;
+.show .author {
+    display: inline-block;
+    font-size: 16px;
 }
 
 .show .info .flex {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .show .user {
-  margin-right: 10px;
-  text-align: right;
-  line-height: 1.4;
+    margin-right: 10px;
+    text-align: right;
+    line-height: 1.4;
 }
 
 .show .favorite {
-  position: static;
-  width: 72px;
+    position: static;
+    width: 72px;
 }
 
 .show .body {
-  padding: 20px;
-  border: 1px solid #a9a9a9;
-  line-height: 2.0;
+    padding: 20px;
+    border: 1px solid #a9a9a9;
+    line-height: 2.0;
 }
 
 .show .container .btns {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .show .modify {
-  margin-top: 30px;
-  background-color: rgba(0, 0, 0, 0.32);
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.32);
 }
 
 .show .delete {
-  margin: 30px 0 0 30px;
-  background-color: #800000;
-  cursor: pointer;
+    margin: 30px 0 0 30px;
+    background-color: #800000;
+    cursor: pointer;
 }
 
 .show .delete:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .show .comment_form {
-  position: relative;
-  margin-top: 80px;
+    position: relative;
+    margin-top: 80px;
 }
 
 .show .error {
-  position: absolute;
-  bottom: 55px;
-  left: 5px;
+    position: absolute;
+    bottom: 55px;
+    left: 5px;
 }
 
 .show .textarea-text {
-  height: 200px;
+    height: 200px;
 }
 
 .show .form_btn {
-  margin: 30px 0 0 auto;
+    margin: 30px 0 0 auto;
 }
 
 .show .comment_field {
-  display: flex;
-  margin-top: 30px;
+    display: flex;
+    margin-top: 30px;
 }
 
 .show .profile {
-  text-align: center;
+    text-align: center;
 }
 
 .show .user_img {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  vertical-align: middle;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    vertical-align: middle;
 }
 
 .show .comment {
-  position: relative;
-  margin-left: 30px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
+    position: relative;
+    margin-left: 30px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
 }
 
 .show .triangle {
-  position: absolute;
-  top: 8px;
-  left: -20px;
-  width: 0;
-  height: 0;
-  border-width: 10px;
-  border-style: solid;
-  border-color: #F3F3F3 #ffffff #F3F3F3 #F3F3F3;
+    position: absolute;
+    top: 8px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #F3F3F3 #ffffff #F3F3F3 #F3F3F3;
 }
 
 /* ユーザーページ */
 .user .container {
-  margin: 50px auto 100px;
-  width: 850px;
-
+    margin: 50px auto 100px;
+    width: 850px;
 }
+
 .user .profile {
-  margin-bottom: 50px;
-  text-align: center;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 .user .thumbnail, .user .dummy {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 10px;
-  background-color: #a9a9a9;
-  border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 10px;
+    background-color: #a9a9a9;
+    border-radius: 50%;
 }
 
 .user .container .user_name {
-  margin-bottom: 20px;
-  font-size: 25px;
-  font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .user .modify {
-  display: block;
-  margin: 0 auto;
-  width: 200px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 5px;
-  background-color: #d3d3d3;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    background-color: #d3d3d3;
 }
 
 /* 登録情報変更 */
 .user_edit .container {
-  margin: 100px auto;
-  padding: 30px;
-  width: 400px;
-  border: 1px solid #a9a9a9;
+    margin: 100px auto;
+    padding: 30px;
+    width: 400px;
+    border: 1px solid #a9a9a9;
 }
 
 .user_edit .box {
-  margin-bottom: 35px;
+    margin-bottom: 35px;
 }
 
 .user_edit .box.first {
-  text-align: center;
+    text-align: center;
 }
 
 .user_edit .error {
-  bottom: -17px;
-  width: 100%;
+    bottom: -17px;
+    width: 100%;
 }
+
 .user_edit .box .error.first {
-  display: block;
+    display: block;
 }
 
 .user_edit .label {
-  display: block;
-  margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .user_edit .thumbnail {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
 .user_edit .dummy {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #a9a9a9;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #a9a9a9;
 }
 
 .user_edit .form_file {
-  display: block;
-  margin-top: 10px;
-  padding-left: 127px;
+    display: block;
+    margin-top: 10px;
+    padding-left: 127px;
 }
-
 
 .user_edit .form_btn {
-  display: block;
-  margin-left: auto;
+    display: block;
+    margin-left: auto;
 }
-
-
 
 /* フォーム初期化＋改変 */
 .form_text {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 0;
-  color: inherit;
-  font-family: inherit;
-  font-size: 1em;
-  padding: 0.4em 0.8em;
-  width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.4em 0.8em;
+    width: 100%;
 }
+
 .form_text:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.32);
+    box-shadow: none;
+    outline: none;
 }
+
 .textarea-text {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 0;
-  color: inherit;
-  font-family: inherit;
-  font-size: 1em;
-  height: 300px;
-  padding: 0.4em 0.8em;
-  width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1em;
+    height: 300px;
+    padding: 0.4em 0.8em;
+    width: 100%;
 }
+
 .textarea-text:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.32);
+    box-shadow: none;
+    outline: none;
 }
+
 .form_btn {
-  -webkit-appearance: none;
-  background-color: rgba(0, 0, 0, 0.32);
-  background-image: none;
-  border: none;
-  border-radius: 0;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1em;
-  text-decoration: none;
+    -webkit-appearance: none;
+    background-color: rgba(0, 0, 0, 0.32);
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
 }
+
 .form_btn:hover,
 .form_btn:focus {
-  outline: none;
-}
-.form_btn::-moz-foucus-inner {
-  border: none;
-  padding: 0;
-}
-.form_select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent url(https://haniwaman.com/wp-content/uploads/2018/12/form-css-arrow.png) no-repeat center right 8px/16px 16px;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 0;
-  color: inherit;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1em;
-  padding: 0.4em 0.8em;
-  width: 100%;
-}
-.form_select::-ms-expand {
-  display: none;
-}
-.form_select:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
+    outline: none;
 }
 
+.form_btn::-moz-foucus-inner {
+    border: none;
+    padding: 0;
+}
+
+.form_select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent url(https://haniwaman.com/wp-content/uploads/2018/12/form-css-arrow.png) no-repeat center right 8px/16px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 0;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.4em 0.8em;
+    width: 100%;
+}
+
+.form_select::-ms-expand {
+    display: none;
+}
+
+.form_select:focus {
+    border: 1px solid rgba(0, 0, 0, 0.32);
+    box-shadow: none;
+    outline: none;
+}
 
 @media (max-width: 1085px) {
-  .mv .wrapper {
-    right: 90px;
-  }
+    .mv .wrapper {
+        right: 90px;
+    }
 
-  .explain {
-    width: 100%;
-  }
+    .explain {
+        width: 100%;
+    }
 }
 
 @media (max-width: 767px) {
-
-  .header {
-    padding: 0 20px;
-    height: 60px;
-    line-height: 60px;
-  }
-
-  .header .title {
-    font-size: 20px;
-  }
-
-  .header .right {
-    display: none;
-    font-size: 12px;
-  }
-
-  .header .menu_btn {
-    display: inline-block;
-  }
-
-  .header .menu_btn::before {
-    display: block;
-    margin-top: 17px;
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .menu {
-    padding: 30px;
-    width: 100%;
-    background-color: #fff;
-    font-size: 25px;
-    color: #2e425b;
-    text-align: center;
-  }
-
-  .menu_item {
-    display: block;
-    margin-bottom: 30px;
-  }
-
-  .menu_item:last-child {
-    margin-bottom: 0;
-  }
-
-  .header .login {
-    margin-right: 10px;
-    padding: 0;
-  }
-
-  .header .signup {
-    margin-right: 10px;
-  }
-
-  .header .post {
-    margin-right: 50px;
-  }
-
-  .header .home {
-    margin-right: 20px;
-  }
-
-  .user_edit .home, .show .home, .add .home, .genre .home, .edit .home {
-    margin-right: 50px;
-  }
-
-  .menu_btn {
-    height: 0;
-  }
-
-  .heading {
-    margin-top: 20px;
-    font-size: 25px;
-  }
-
-  .form_text {
-    padding: 10px 6px;
-    font-size: 12px;
-  }
-
-  .form_btn {
-    margin-top: 20px;
-    width: 100%;
-    height: 45px;
-    font-size: 12px;
-    line-height: 45px;
-  }
-
-  .btn {
-    margin-top: 20px;
-    width: 100%;
-    height: 45px;
-    font-size: 12px;
-    line-height: 45px;
-  }
-
-  .main {
-    padding: 0 10px;
-  }
-
-  #modalWindow {
-    padding: 50px 10px;
-    width: 100%;
-  }
-
-  .mv {
-    height: 250px;
-  }
-
-  .mv .wrapper {
-    top: 100px;
-    right: 12px;
-  }
-
-  .mv .title {
-    margin-bottom: 15px;
-    font-size: 30px;
-  }
-
-  .mv .message {
-    padding-left: 10px;
-    font-size: 18px;
-  }
-
-  .mv .buttons {
-    display: none;
-  }
-
-
-  .section_buttons {
-    display: block;
-    padding: 30px 10px;
-    background-color: #F3F3F3;
-  }
-
-  .section_buttons .btn {
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-    height: 60px;
-    color: #fff;
-    line-height: 60px;
-    text-align: center;
-    font-size: 16px;
-    background-color: rgba(0, 0, 0, 0.32);
-  }
-
-  .section_buttons .login {
-    padding: 0;
-  }
-
-  .section_buttons .signup {
-    margin-top: 20px;
-  }
-
-  .explain {
-    padding: 30px 10px 80px;
-  }
-
-  .explain .question {
-    font-size: 25px;
-  }
-
-  .explain .answer {
-    margin-top: 20px;
-    font-size: 16px;
-    line-height: 3;
-  }
-
-  .footer {
-    padding: 15px 0;
-  }
-
-  .footer p {
-    font-size: 12px;
-  }
-
-  .register, .login {
-    padding:0 10px;
-    height: 560px;
-  }
-
-  .register h2, .login h2 {
-    margin-bottom: 50px;
-    font-size: 25px;
-  }
-
-  .register .container, .login .container {
-    margin: 50px auto 0;
-    padding: 0;
-    width: 100%;
-    border: none;
-  }
-
-  .register .form_text, .login .form_text {
-    margin-bottom: 30px;
-    padding: 10px 6px;
-    font-size: 12px;
-  }
-
-  .register .form_btn, .login .form_btn {
-    width: 100%;
-  }
-
-  .twitter {
-    padding: 15px 0;
-    width: 100%;
-  }
-
-  .home .container {
-    margin: 20px auto;
-    width: 100%;
-  }
-
-  .home .genre label {
-    font-size: 14px;
-  }
-
-  .home .form_select {
-    width: 270px;
-  }
-
-  .home .form_btn {
-    margin-top: 10px;
-    padding: 0;
-    width: 100%;
-    height: 35px;
-    line-height: 35px;
-    border-radius: 0;
-  }
-
-  .item {
-    margin: 0 auto 30px;
-    width: 60%;
-    height: 250px;
-  }
-
-  .item:nth-child(3n) {
-    margin: 0 auto 30px;
-  }
-
-  .item .user {
-    bottom: 55px;
-  }
-
-  .item .favorite {
-    bottom: 20px;
-  }
-
-  .genre .container {
-    margin: 20px auto;
-    width: 100%;
-  }
-
-  .genre .genre .form_select {
-    width: 268px;
-  }
-
-  .genre .genre .form_btn {
-    margin-top: 10px;
-    padding: 0;
-    width: 100%;
-    height: 35px;
-    line-height: 35px;
-    border-radius: 0;
-  }
-
-  .show .container {
-    margin: 20px auto;
-    width: 100%;
-  }
-
-  .show .info {
-    margin-bottom: 10px;
-  }
-
-  .show .book {
-    font-size: 17px;
-  }
-
-  .show .author {
-    top: 3px;
-    left: 220px;
-    font-size: 13px;
-  }
-
-  .show .user {
-    margin-bottom: 5px;
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  .show .favorite {
-    width: 85px;
-    height: 25px;
-    font-size: 12px;
-  }
-
-  .show .fa-star {
-    font-size: 12px;
-  }
-
-  .show .body {
-    padding: 10px;
-    font-size: 12px;
-    line-height: 2;
-  }
-
-  .show .container .btns {
-    display: block;
-  }
-
-  .show .modify {
-    margin-top: 20px;
-    width: 100%;
-    font-size: 15px;
-  }
-
-  .show .delete {
-    margin: 10px 0 0 0;
-    width: 100%;
-    font-size: 15px;
-  }
-
-  .show .comment_form {
-    margin-top: 50px;
-  }
-
-  .show .textarea-text {
-    height: 100px;
-    font-size: 12px;
-  }
-
-  .show .error {
-    position: absolute;
-    bottom: 50px;
-    left: 5px;
-  }
-
-  .show .form_btn {
-    margin: 20px 0 0 auto;
-    font-size: 15px;
-  }
-
-  .show .user_img {
-    width: 25px;
-    height: 25px;
-    margin: 0 0 2px 2px;
-  }
-
-  .show .user_name {
-    font-size: 10px;
-  }
-
-  .show .triangle {
-    top: 6px;
-    left: -11px;
-    border-width: 6px;
-  }
-
-  .show .comment {
-    margin-left: 15px;
-    font-size: 12px;
-    border-radius: 5px;
-  }
-
-  .add .container {
-    margin: 20px auto 30px;
-    width: 100%;
-  }
-  .add .preserve_area {
-    width: 100%;
-    text-align: center;
-  }
-
-  .add .preserve_item {
-    padding: 15px 0 14px;
-    border-bottom: 1px solid #d3d3d3;
-  }
-
-  .add .preserve_select {
-    position: static;
-    display: block;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  .add .preserve_item .use {
-    margin-right: 45px;
-  }
-
-  .add label {
-    font-size: 12px;
-  }
-
-  .add .form_text {
-    margin: 5px 0 20px;
-  }
-
-  .add .form_select {
-    font-size: 12px;
-  }
-
-  .add .textarea-text {
-    margin: 5px 0 15px;
-    padding: 5px 10px;
-    font-size: 12px;
-  }
-
-  .add .error {
-    bottom: 3px;
-  }
-
-  .add .box:nth-of-type(4) .error {
-    bottom: 13px;
-  }
-
-  .add .last .error {
-    bottom: 0;
-  }
-
-  .add .save {
-    margin: 10px 0 0 0;
-    width: 100%;
-  }
-
-  .edit .container {
-    margin: 20px auto 30px;
-    width: 100%;
-  }
-
-  .edit label {
-    font-size: 12px;
-  }
-
-  .edit .form_text {
-    margin: 5px 0 20px;
-  }
-
-  .edit .error {
-    bottom: 3px;
-  }
-
-  .edit .form_select {
-    font-size: 12px;
-  }
-
-  .edit .textarea-text {
-    margin: 5px 0 0;
-    padding: 5px 10px;
-    font-size: 12px;
-  }
-
-  .edit .last .error {
-    bottom: -15px;
-  }
-
-  .edit .quit{
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .user .container {
-    margin: 20px auto 0;
-    width: 100%;
-  }
-
-  .user .profile {
-    margin-bottom: 25px;
-  }
-
-  .user .thumbnail, .user .dummy {
-    margin-bottom: 5px;
-    width: 100px;
-    height: 100px;
-  }
-
-  .user .user_name {
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-
-  .user .modify {
-    width: 150px;
-    height: 25px;
-    font-size: 12px;
-    line-height: 25px;
-  }
-
-  .user_edit .container {
-    margin: 20px auto 0;
-    padding: 15px 0;
-    width: 100%;
-    border: none;
-  }
-
-  .user_edit label {
-    font-size: 12px;
-  }
-
-  .user_edit .thumbnail {
-    width: 100px;
-    height: 100px;
-  }
-
-  .user_edit .form_file {
-    padding-left: 85px;
-    font-size: 10px;
-  }
-
-  .user_edit .box {
-    margin-bottom: 20px;
-  }
-
-  .user_edit .label {
-    margin-bottom: 5px;
-  }
-
-  .user_edit .form_text {
-    padding: 3px 6px;
-    font-size: 12px;
-  }
+    .header {
+        padding: 0 20px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .header .title {
+        font-size: 20px;
+    }
+
+    .header .right {
+        display: none;
+        font-size: 12px;
+    }
+
+    .header .menu_btn {
+        display: inline-block;
+    }
+
+    .header .menu_btn::before {
+        display: block;
+        margin-top: 17px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .menu {
+        padding: 30px;
+        width: 100%;
+        background-color: #fff;
+        font-size: 25px;
+        color: #2e425b;
+        text-align: center;
+    }
+
+    .menu_item {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .menu_item:last-child {
+        margin-bottom: 0;
+    }
+
+    .header .login {
+        margin-right: 10px;
+        padding: 0;
+    }
+
+    .header .signup {
+        margin-right: 10px;
+    }
+
+    .header .post {
+        margin-right: 50px;
+    }
+
+    .header .home {
+        margin-right: 20px;
+    }
+
+    .user_edit .home, .show .home, .add .home, .genre .home, .edit .home {
+        margin-right: 50px;
+    }
+
+    .menu_btn {
+        height: 0;
+    }
+
+    .heading {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+
+    .form_text {
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+
+    .form_btn {
+        margin-top: 20px;
+        width: 100%;
+        height: 45px;
+        font-size: 12px;
+        line-height: 45px;
+    }
+
+    .btn {
+        margin-top: 20px;
+        width: 100%;
+        height: 45px;
+        font-size: 12px;
+        line-height: 45px;
+    }
+
+    .main {
+        padding: 0 10px;
+    }
+
+    #modalWindow {
+        padding: 50px 10px;
+        width: 100%;
+    }
+
+    .mv {
+        height: 250px;
+    }
+
+    .mv .wrapper {
+        top: 100px;
+        right: 12px;
+    }
+
+    .mv .title {
+        margin-bottom: 15px;
+        font-size: 30px;
+    }
+
+    .mv .message {
+        padding-left: 10px;
+        font-size: 18px;
+    }
+
+    .mv .buttons {
+        display: none;
+    }
+
+    .section_buttons {
+        display: block;
+        padding: 30px 10px;
+        background-color: #F3F3F3;
+    }
+
+    .section_buttons .btn {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 60px;
+        color: #fff;
+        line-height: 60px;
+        text-align: center;
+        font-size: 16px;
+        background-color: rgba(0, 0, 0, 0.32);
+    }
+
+    .section_buttons .login {
+        padding: 0;
+    }
+
+    .section_buttons .signup {
+        margin-top: 20px;
+    }
+
+    .explain {
+        padding: 30px 10px 80px;
+    }
+
+    .explain .question {
+        font-size: 25px;
+    }
+
+    .explain .answer {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 3;
+    }
+
+    .footer {
+        padding: 15px 0;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+    .register, .login {
+        padding: 0 10px;
+        height: 560px;
+    }
+
+    .register h2, .login h2 {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+
+    .register .container, .login .container {
+        margin: 50px auto 0;
+        padding: 0;
+        width: 100%;
+        border: none;
+    }
+
+    .register .form_text, .login .form_text {
+        margin-bottom: 30px;
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+
+    .register .form_btn, .login .form_btn {
+        width: 100%;
+    }
+
+    .twitter {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .home .container {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    .home .genre label {
+        font-size: 14px;
+    }
+
+    .home .form_select {
+        width: 270px;
+    }
+
+    .home .form_btn {
+        margin-top: 10px;
+        padding: 0;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 0;
+    }
+
+    .item {
+        margin: 0 auto 30px;
+        width: 60%;
+        height: 250px;
+    }
+
+    .item:nth-child(3n) {
+        margin: 0 auto 30px;
+    }
+
+    .item .user {
+        bottom: 55px;
+    }
+
+    .item .favorite {
+        bottom: 20px;
+    }
+
+    .genre .container {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    .genre .genre .form_select {
+        width: 268px;
+    }
+
+    .genre .genre .form_btn {
+        margin-top: 10px;
+        padding: 0;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 0;
+    }
+
+    .show .container {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    .show .info {
+        margin-bottom: 10px;
+    }
+
+    .show .book {
+        font-size: 17px;
+    }
+
+    .show .author {
+        top: 3px;
+        left: 220px;
+        font-size: 13px;
+    }
+
+    .show .user {
+        margin-bottom: 5px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .show .favorite {
+        width: 85px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .show .fa-star {
+        font-size: 12px;
+    }
+
+    .show .body {
+        padding: 10px;
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    .show .container .btns {
+        display: block;
+    }
+
+    .show .modify {
+        margin-top: 20px;
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .show .delete {
+        margin: 10px 0 0 0;
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .show .comment_form {
+        margin-top: 50px;
+    }
+
+    .show .textarea-text {
+        height: 100px;
+        font-size: 12px;
+    }
+
+    .show .error {
+        position: absolute;
+        bottom: 50px;
+        left: 5px;
+    }
+
+    .show .form_btn {
+        margin: 20px 0 0 auto;
+        font-size: 15px;
+    }
+
+    .show .user_img {
+        width: 25px;
+        height: 25px;
+        margin: 0 0 2px 2px;
+    }
+
+    .show .user_name {
+        font-size: 10px;
+    }
+
+    .show .triangle {
+        top: 6px;
+        left: -11px;
+        border-width: 6px;
+    }
+
+    .show .comment {
+        margin-left: 15px;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+
+    .add .container {
+        margin: 20px auto 30px;
+        width: 100%;
+    }
+
+    .add .preserve_area {
+        width: 100%;
+        text-align: center;
+    }
+
+    .add .preserve_item {
+        padding: 15px 0 14px;
+        border-bottom: 1px solid #d3d3d3;
+    }
+
+    .add .preserve_select {
+        position: static;
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .add .preserve_item .use {
+        margin-right: 45px;
+    }
+
+    .add label {
+        font-size: 12px;
+    }
+
+    .add .form_text {
+        margin: 5px 0 20px;
+    }
+
+    .add .form_select {
+        font-size: 12px;
+    }
+
+    .add .textarea-text {
+        margin: 5px 0 15px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .add .error {
+        bottom: 3px;
+    }
+
+    .add .box:nth-of-type(4) .error {
+        bottom: 13px;
+    }
+
+    .add .last .error {
+        bottom: 0;
+    }
+
+    .add .save {
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+
+    .edit .container {
+        margin: 20px auto 30px;
+        width: 100%;
+    }
+
+    .edit label {
+        font-size: 12px;
+    }
+
+    .edit .form_text {
+        margin: 5px 0 20px;
+    }
+
+    .edit .error {
+        bottom: 3px;
+    }
+
+    .edit .form_select {
+        font-size: 12px;
+    }
+
+    .edit .textarea-text {
+        margin: 5px 0 0;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .edit .last .error {
+        bottom: -15px;
+    }
+
+    .edit .quit {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .user .container {
+        margin: 20px auto 0;
+        width: 100%;
+    }
+
+    .user .profile {
+        margin-bottom: 25px;
+    }
+
+    .user .thumbnail, .user .dummy {
+        margin-bottom: 5px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .user .user_name {
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .user .modify {
+        width: 150px;
+        height: 25px;
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    .user_edit .container {
+        margin: 20px auto 0;
+        padding: 15px 0;
+        width: 100%;
+        border: none;
+    }
+
+    .user_edit label {
+        font-size: 12px;
+    }
+
+    .user_edit .thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+
+    .user_edit .form_file {
+        padding-left: 85px;
+        font-size: 10px;
+    }
+
+    .user_edit .box {
+        margin-bottom: 20px;
+    }
+
+    .user_edit .label {
+        margin-bottom: 5px;
+    }
+
+    .user_edit .form_text {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
 }
